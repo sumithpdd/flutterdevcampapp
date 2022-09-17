@@ -1,7 +1,7 @@
 class Data {
-  final String cityName;
-  final String cityImage;
-  final String cityInfo;
+  late String cityName;
+  late String cityImage;
+  late String cityInfo;
 
   Data(
       {required this.cityName,
@@ -34,6 +34,24 @@ List<Data> dataList = [
           "https://img.freepik.com/free-photo/singapore-cityscape-twilight_335224-686.jpg?w=2000&t=st=1663196035~exp=1663196635~hmac=81afdbf47d25cba65ede1566b0ad32794d60cce0930a6c422c96c1f62b75789d",
       cityInfo:
           "Singapore, city-state located at the southern tip of the Malay Peninsula, about 85 miles (137 kilometres) north of the Equator."),
+  Data(
+      cityName: "Prague",
+      cityImage:
+          "https://img.freepik.com/free-photo/prague-castle-from-vltava-side_1398-2758.jpg?w=1380&t=st=1663438901~exp=1663439501~hmac=46a6791051889dbe51ee239ae7011a7c7d105a84b06b2a9a79d7d368d18ce953",
+      cityInfo:
+          "Prague, is the capital and largest city in the Czech Republic, and the historical capital of Bohemia."),
+  Data(
+      cityName: "Osaka",
+      cityImage:
+          "https://img.freepik.com/free-photo/cherry-blossoms-castle-osaka-japan_335224-169.jpg?w=1380&t=st=1663438937~exp=1663439537~hmac=8b576589b33fbaa82afb9a8e15efd49d0818d03a8425d5f27871a9380fd2647e",
+      cityInfo:
+          "Osaka is a large port city and commercial center on the Japanese island of Honshu."),
+  Data(
+      cityName: "Berlin",
+      cityImage:
+          "https://img.freepik.com/free-photo/building-with-columns_1160-803.jpg?w=1380&t=st=1663439085~exp=1663439685~hmac=db82c0f1a09750e9b47e63a0f271778f2ed36a8bc3fcfc589dbf9b24859ef2d8",
+      cityInfo:
+          "Berlin, Germany's capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains."),
 ];
 
 List<String> pagesList = [
@@ -41,17 +59,3 @@ List<String> pagesList = [
   'Places',
   'Hotels',
 ];
-
-// ListView.builder(
-//                   padding: const EdgeInsets.only(left: 8.0),
-//                   itemCount: pagesList.length,
-//                   scrollDirection: Axis.horizontal,
-//                   itemBuilder: (context, index) {
-//                     return Container(
-//                       height: 20,
-//                       color: Colors.red.shade800,
-//                       child: Center(
-//                         child: Text(pagesList[index]),
-//                       ),
-//                     );
-//                   }),

@@ -1,4 +1,5 @@
 import 'package:devcamp_session1/models/data.dart';
+import 'package:devcamp_session1/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,77 +27,56 @@ class HomePage extends StatelessWidget {
         title: const Text('Travel App'),
         backgroundColor: Colors.red.shade800,
       ),
-      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Image.network(
-          headerImgLink,
-          fit: BoxFit.contain,
-        ),
-        const SizedBox(
-          height: 10.0,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 50,
-              width: 100,
-              decoration: BoxDecoration(
-                  color: Colors.red.shade800,
-                  borderRadius: BorderRadius.circular(8.0)),
-              child: Center(
-                child: Text(
-                  pagesList[0],
-                  style: const TextStyle(
-                    color: Colors.white,
-                  ),
+            Image.network(
+              headerImgLink,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                buildContainer(pagesList[0]),
+                buildContainer(pagesList[1]),
+                buildContainer(pagesList[2]),
+              ],
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 12.0),
+              child: Text(
+                'Popular Destination',
+                style: TextStyle(
+                  fontSize: 20,
                 ),
               ),
             ),
-            Container(
-              height: 50,
-              width: 100,
-              decoration: BoxDecoration(
-                  color: Colors.red.shade800,
-                  borderRadius: BorderRadius.circular(8.0)),
-              child: Center(
-                child: Text(
-                  pagesList[1],
-                  style: const TextStyle(
-                    color: Colors.white,
-                  ),
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+              child: GridView.builder(
+                physics: const ScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 10,
                 ),
-              ),
-            ),
-            Container(
-              height: 50,
-              width: 100,
-              decoration: BoxDecoration(
-                  color: Colors.red.shade800,
-                  borderRadius: BorderRadius.circular(8.0)),
-              child: Center(
-                child: Text(
-                  pagesList[2],
-                  style: const TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
+                itemCount: dataList.length,
+                itemBuilder: (context, index) {
+                  return buildStack(dataList[index]);
+                },
               ),
             ),
           ],
         ),
-        const SizedBox(
-          height: 20.0,
-        ),
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            'Popular Destination',
-            style: TextStyle(
-              fontSize: 18.0,
-            ),
-          ),
-        ),
-      ]),
+      ),
     );
   }
 }
