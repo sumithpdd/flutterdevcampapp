@@ -3,10 +3,11 @@ class Data {
   late String cityImage;
   late String cityInfo;
 
-  Data(
-      {required this.cityName,
-      required this.cityImage,
-      required this.cityInfo});
+  Data({
+    required this.cityName,
+    required this.cityImage,
+    required this.cityInfo,
+  });
 }
 
 List<Data> dataList = [
@@ -52,10 +53,4 @@ List<Data> dataList = [
           "https://img.freepik.com/free-photo/building-with-columns_1160-803.jpg?w=1380&t=st=1663439085~exp=1663439685~hmac=db82c0f1a09750e9b47e63a0f271778f2ed36a8bc3fcfc589dbf9b24859ef2d8",
       cityInfo:
           "Berlin, Germany's capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains."),
-];
-
-List<String> pagesList = [
-  'Attraction',
-  'Places',
-  'Hotels',
 ];

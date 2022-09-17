@@ -18,6 +18,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> pagesList = [
+      'Attraction',
+      'Places',
+      'Hotels',
+    ];
     const headerImgLink =
         'https://img.freepik.com/premium-vector/travel-concept-vector-illustration-with-famous-sights-accessories_95169-98.jpg?w=1800';
 
