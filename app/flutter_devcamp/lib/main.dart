@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -20,16 +18,11 @@ class MyApp extends StatelessWidget {
       title: 'FlutterDevcamp - 2022 - Welcome',
       theme: ThemeData(
         primaryColor: AppConstants.hexToColor(AppConstants.appPrimaryColor),
-        backgroundColor:
-            AppConstants.hexToColor(AppConstants.appBackgroundColor),
-        primaryColorLight:
-            AppConstants.hexToColor(AppConstants.appPrimaryColorLight),
-        dividerColor:
-            AppConstants.hexToColor(AppConstants.appBackgroundColorGray),
+        backgroundColor: AppConstants.hexToColor(AppConstants.appBackgroundColor),
+        primaryColorLight: AppConstants.hexToColor(AppConstants.appPrimaryColorLight),
+        dividerColor: AppConstants.hexToColor(AppConstants.appBackgroundColorGray),
         textTheme: TextTheme(
-          caption: TextStyle(
-              color: AppConstants.hexToColor(
-                  AppConstants.appPrimaryFontColorWhite)),
+          caption: TextStyle(color: AppConstants.hexToColor(AppConstants.appPrimaryFontColorWhite)),
         ),
       ),
       home: const MyHomePage(title: 'FlutterDevcamp - 2022 - Welcome'),
@@ -49,7 +42,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 1;
   final nameController = TextEditingController();
-  String name = "";
+  String name = "Marius";
   var currentDay = DateTime.now().day;
   void _printLatestValue() {
     setState(() {
@@ -57,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  var e = 4;
   @override
   void initState() {
     super.initState();
@@ -68,11 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       (currentDay < _counter) ? _counter = 1 : _counter++;
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
     });
   }
 
@@ -88,6 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        elevation: 4,
+        backgroundColor: Colors.red,
         title: Text(widget.title),
       ),
       body: Column(
@@ -111,8 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     '#flutterdevcamp - London ${DateFormat.MMMMd().format(DateTime.now())} ',
                     style: TextStyle(
-                      color: AppConstants.hexToColor(
-                          AppConstants.appPrimaryColorLight),
+                      color: AppConstants.hexToColor(AppConstants.appPrimaryColorLight),
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
                     ),
@@ -127,6 +117,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Text(
             currentDay == _counter ? "🪙" : "$_counter times ",
+            style: Theme.of(context).textTheme.headline2,
+          ),
+          Text(
+            currentDay == _counter ? "🪙" : "$_counter times de review ",
             style: Theme.of(context).textTheme.headline2,
           ),
           Padding(
