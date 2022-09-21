@@ -46,9 +46,9 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                buildContainer(pagesList[0]),
-                buildContainer(pagesList[1]),
-                buildContainer(pagesList[2]),
+                MyCustomContainer(text: pagesList[0]),
+                MyCustomContainer(text: pagesList[1]),
+                MyCustomContainer(text: pagesList[2]),
               ],
             ),
             const SizedBox(
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
                 ),
                 itemCount: dataList.length,
                 itemBuilder: (context, index) {
-                  return buildStack(dataList[index]);
+                  return MyCustomStack(data: dataList[index]);
                 },
               ),
             ),
