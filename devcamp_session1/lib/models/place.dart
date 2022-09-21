@@ -9,3 +9,5 @@ class Place {
     required this.placeDescription,
   });
 }
+
+// TODO (Joshua): Add list of places for each city here and import those into the dataList in Data.dart
