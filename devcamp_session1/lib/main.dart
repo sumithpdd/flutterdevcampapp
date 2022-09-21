@@ -1,3 +1,4 @@
+import 'package:devcamp_session1/details_page.dart';
 import 'package:devcamp_session1/models/data.dart';
 import 'package:devcamp_session1/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +76,19 @@ class HomePage extends StatelessWidget {
                 ),
                 itemCount: dataList.length,
                 itemBuilder: (context, index) {
-                  return MyCustomStack(data: dataList[index]);
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => DetailPage(city: dataList[index]),
+                        ),
+                      );
+                    },
+                    child: MyCustomStack(
+                      data: dataList[index],
+                    ),
+                  );
                 },
               ),
             ),
