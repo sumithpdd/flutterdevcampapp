@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.blue.shade800,
@@ -49,7 +50,9 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 18,
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Text(
               homePageQuestion,
               style: TextStyle(
@@ -58,9 +61,13 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 30,
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             SearchBox(),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Text(
               mostPopularRecipesTitle,
               style: TextStyle(
@@ -68,6 +75,10 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
               ),
+            ),
+            SizedBox(height: 20,),
+            Flexible(
+              child: RecipeCard(),
             ),
             SizedBox(height: 20,),
             SizedBox(
