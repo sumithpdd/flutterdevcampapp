@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Pasta Primavera",
+        "imageUrl": "https://thestayathomechef.com/wp-content/uploads/2020/03/Creamy-Pasta-Primavera-9.jpg",
+        "duration": 30,
+        "servingsCount": 2,
+        "reviewCount": 347
+    },
+    {
+        "name": "Slow-cooker beef stew",
+        "imageUrl": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/slow-cooker-beef-stew-8ade07f.jpg?resize=960,872?quality=90&webp=true&resize=375,341",
+        "duration": 240,
+        "servingsCount": 4,
+        "reviewCount": 383
+    },
+    {
+        "name": "Sticky Chinese Pork Stir-Fry",
+        "imageUrl": "https://img.taste.com.au/7HKmgGXt/w720-h480-cfill-q80/taste/2016/11/sticky-chinese-pork-stir-fry-105690-1.jpeg",
+        "duration": 15,
+        "servingsCount": 4,
+        "reviewCount": 254
+    }
+]
