@@ -5,6 +5,7 @@ void main() {
   runApp(
     MaterialApp(
       title: 'Recipe App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

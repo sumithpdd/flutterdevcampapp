@@ -1,11 +1,3 @@
-enum Category {
-  none,
-  slowCooker,
-  vegetarian,
-  quickAndEasy,
-  seasonal,
-}
-
 class Recipe {
   final String name;
   final String imageUrl;
