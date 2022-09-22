@@ -1,5 +1,5 @@
-import 'package:devcamp_session1/details_page.dart';
-import 'package:devcamp_session1/models/data.dart';
+import 'package:devcamp_session1/destination_detail_page.dart';
+import 'package:devcamp_session1/models/destination.dart';
 import 'package:devcamp_session1/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => DetailPage(city: dataList[index]),
+                          builder: (_) => DestinationDetailPage(city: dataList[index]),
                         ),
                       );
                     },

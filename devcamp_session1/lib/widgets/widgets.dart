@@ -1,4 +1,4 @@
-import 'package:devcamp_session1/models/data.dart';
+import 'package:devcamp_session1/models/destination.dart';
 import 'package:flutter/material.dart';
 
 class MyCustomContainer extends StatelessWidget {
@@ -30,7 +30,7 @@ class MyCustomContainer extends StatelessWidget {
 }
 
 class MyCustomStack extends StatelessWidget {
-  final Data data;
+  final Destination data;
   const MyCustomStack({
     Key? key,
     required this.data,
