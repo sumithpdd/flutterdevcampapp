@@ -13,7 +13,8 @@ class Place {
 List<Place> placesInAlmaty = [
   Place(
     placeName: 'Shymbulak',
-    placeImage: 'https://astanatimes.com/wp-content/uploads/2020/01/20190314203151.jpg',
+    placeImage:
+        'https://astanatimes.com/wp-content/uploads/2020/01/20190314203151.jpg',
     placeDescription:
         'Shymbulak, also known as Chimbulak is a ski resort near Almaty. It is the largest ski resort in Central Asia. It is located in the upper part of the Medeu Valley in the Zailiisky Alatau mountain range, at an elevation of 2,200 metres above sea level.',
   ),
@@ -59,25 +60,29 @@ List<Place> placesInLondon = [
     placeName: 'Westminster Abbey',
     placeImage:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3uye56H8zODr5wDwxQPoxsMlPkQQEOkm7nigpSCD-43wQRUrM_Lq_0xV_nS1qdCi0bZ47o5V82g9CmRKzogn8g',
-    placeDescription: '',
+    placeDescription:
+        'Westminster Abbey, formally titled the Collegiate Church of Saint Peter at Westminster, is a large, mainly Gothic abbey church in the City of Westminster, London, England, just to the west of the Palace of Westminster.',
   ),
   Place(
     placeName: 'London Eye',
     placeImage:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_bhiFU65zciCpvpqrwSCHJxNcqeDfqmnZtTjnCYuRBsumG-rEJ6mVCS0Bc-WoKpBSfzuJQmvRiN11Q2C2OOGSGg',
-    placeDescription: '',
+    placeDescription:
+        'The London Eye, or the Millennium Wheel, is a cantilevered observation wheel on the South Bank of the River Thames in London.',
   ),
   Place(
     placeName: 'St. Paul\'s Cathedral',
     placeImage:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtIwgN0fbOVQLq2r_5lazjm8fgm4WGZYATtPG13_CxCf7BVaEC9tBVrbpiUHI4mQQ_5-U9bMjuCDphJE1sElmd3A',
-    placeDescription: '',
+    placeDescription:
+        'St Paul\'s Cathedral is an Anglican cathedral in London and is the seat of the Bishop of London. The cathedral serves as the mother church of the Diocese of London.',
   ),
   Place(
     placeName: 'The British Museum',
     placeImage:
         'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTU9A1mSKkJHm5x_Zp_mxsXgdu5SS089ZekN0uAe0ZiP5GfrbdVW_QjkMWObSD60IV9V0udSZzT-bDBhKKH0jK6QA',
-    placeDescription: '',
+    placeDescription:
+        'The British Museum is a public museum dedicated to human history, art and culture located in the Bloomsbury area of London.',
   )
 ];
 
@@ -95,23 +100,23 @@ List<Place> placesInParis = [
   Place(
     placeName: 'Eiffel Tower',
     placeImage:
-    'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQvnB0dD_MCmdoIGVGsC5tJdMxu5hjKag-mVuc8ZcbcBsJO0Yr-EtxTIU5Md9h3qoFaynWEh-qz4iuOwAbP_f7_7A',
+        'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQvnB0dD_MCmdoIGVGsC5tJdMxu5hjKag-mVuc8ZcbcBsJO0Yr-EtxTIU5Md9h3qoFaynWEh-qz4iuOwAbP_f7_7A',
     placeDescription:
-    'The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Locally nicknamed "La dame de fer", it was constructed from 1887 to 1889 as the centerpiece of the 1889 World\'s Fair.',
+        'The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Locally nicknamed "La dame de fer", it was constructed from 1887 to 1889 as the centerpiece of the 1889 World\'s Fair.',
   ),
   Place(
     placeName: 'Louvre Museum',
     placeImage:
-    'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTqcSb8tBeNaPKGEWGQGTabDdxhSNbQDO_M6AcD-qoe7Or7tLCpKeM1Dw4yC5sa_BHCm8jIuEIQy4Wfd2vF0EXamg',
+        'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTqcSb8tBeNaPKGEWGQGTabDdxhSNbQDO_M6AcD-qoe7Or7tLCpKeM1Dw4yC5sa_BHCm8jIuEIQy4Wfd2vF0EXamg',
     placeDescription:
-    'The Louvre, or the Louvre Museum, is the world\'s most-visited museum, and a historic landmark in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city\'s 1st arrondissement.',
+        'The Louvre, or the Louvre Museum, is the world\'s most-visited museum, and a historic landmark in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city\'s 1st arrondissement.',
   ),
   Place(
     placeName: 'Arc de Triomphe',
     placeImage:
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQoampQRxxyGjB5ERXi9nTc3YCFd6F8XyNX_w2peRJmn85owFVdD1tiQ3Ny4vGDXF4VnxNAzQi5FCDhn1P-P8DAQ',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQoampQRxxyGjB5ERXi9nTc3YCFd6F8XyNX_w2peRJmn85owFVdD1tiQ3Ny4vGDXF4VnxNAzQi5FCDhn1P-P8DAQ',
     placeDescription:
-    'The Arc de Triomphe de l\'Étoile is one of the most famous monuments in Paris, France, standing at the western end of the Champs-Élysées at the centre of Place Charles de Gaulle, formerly named Place de l\'Étoile—the étoile or "star" of the juncture formed by its twelve radiating avenues. The location of the arc and the plaza is shared between three arrondissements, 16th, 17th, and 8th. The Arc de Triomphe honours those who fought and died for France in the French Revolutionary and Napoleonic Wars, with the names of all French victories and generals inscribed on its inner and outer surfaces.',
+        'The Arc de Triomphe de l\'Étoile is one of the most famous monuments in Paris, France, standing at the western end of the Champs-Élysées at the centre of Place Charles de Gaulle, formerly named Place de l\'Étoile—the étoile or "star" of the juncture formed by its twelve radiating avenues. The location of the arc and the plaza is shared between three arrondissements, 16th, 17th, and 8th. The Arc de Triomphe honours those who fought and died for France in the French Revolutionary and Napoleonic Wars, with the names of all French victories and generals inscribed on its inner and outer surfaces.',
   ),
 ];
 

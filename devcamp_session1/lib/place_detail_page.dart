@@ -19,6 +19,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red.shade800,
+        centerTitle: true,
         title: Text(widget.place.placeName),
       ),
       backgroundColor: Colors.red.shade800,
@@ -28,27 +29,13 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
           const SizedBox(
             height: 10,
           ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              "Information",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               widget.place.placeDescription,
               style: const TextStyle(
                 color: Colors.white,
-                fontSize: 15,
+                fontSize: 20,
               ),
             ),
           ),

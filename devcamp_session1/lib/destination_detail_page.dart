@@ -20,6 +20,7 @@ class _DestinationDetailPageState extends State<DestinationDetailPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red.shade800,
+        centerTitle: true,
         title: Text(widget.city.cityName),
       ),
       backgroundColor: Colors.red.shade800,
@@ -32,7 +33,10 @@ class _DestinationDetailPageState extends State<DestinationDetailPage> {
             padding: EdgeInsets.all(8.0),
             child: Text(
               'Popular Places',
-              style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(
@@ -67,7 +71,7 @@ class _DestinationDetailPageState extends State<DestinationDetailPage> {
                           widget.city.cityPlaces[index].placeName,
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 10,
+                            fontSize: 14,
                           ),
                         ),
                       ],
