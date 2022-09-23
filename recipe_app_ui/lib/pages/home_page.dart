@@ -17,85 +17,71 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.blue.shade800,
+        backgroundColor: Theme.of(context).primaryColor,
         leading: IconButton(
           onPressed: () {},
+          color: Theme.of(context).iconTheme.color,
           icon: const Icon(
             Icons.sort_rounded,
-            color: Colors.white,
           ),
         ),
         actions: [
           IconButton(
             onPressed: () {},
+            color: Theme.of(context).iconTheme.color,
             icon: const Icon(
               Icons.notifications_active_rounded,
-              color: Colors.white,
             ),
           ),
         ],
       ),
-      backgroundColor: Colors.blue.shade800,
+      backgroundColor: Theme.of(context).primaryColor,
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
               homePageGreeting,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-              ),
+              style: Theme.of(context).textTheme.headline2,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Text(
               homePageQuestion,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-              ),
+              style: Theme.of(context).textTheme.headline1,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            SearchBox(),
-            SizedBox(
+            const SearchBox(),
+            const SizedBox(
               height: 20,
             ),
             Text(
               mostPopularRecipesTitle,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-              ),
+              style: Theme.of(context).textTheme.headline2,
             ),
-            SizedBox(height: 20,),
-            Flexible(
+            const SizedBox(
+              height: 20,
+            ),
+            const SizedBox(
+              height: 250,
               child: RecipeCard(),
             ),
-            SizedBox(height: 20,),
-            SizedBox(
-              height: 50,
+            const SizedBox(
+              height: 20,
+            ),
+            const SizedBox(
+              height: 60,
               child: FilterListView(),
             )
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.blue.shade800,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white70,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        backgroundColor: Theme.of(context).primaryColor,
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {

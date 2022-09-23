@@ -19,7 +19,7 @@ class RecipeCard extends StatelessWidget {
           child: Container(
             constraints: const BoxConstraints(
               maxWidth: 200,
-              maxHeight: 250,
+              maxHeight: 240,
             ),
             decoration: BoxDecoration(
               color: cardColorsList[index % cardColorsList.length],

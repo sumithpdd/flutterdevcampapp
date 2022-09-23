@@ -8,9 +8,9 @@ class FilterListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(
+        Icon(
           Icons.tune_outlined,
-          color: Colors.white,
+          color: Theme.of(context).iconTheme.color,
         ),
         Expanded(
           child: ListView.builder(
@@ -25,15 +25,12 @@ class FilterListView extends StatelessWidget {
                   width: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.blue.shade900,
+                    color: Theme.of(context).primaryColorDark,
                   ),
                   child: Center(
                     child: Text(
                       categoryList[index],
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 10
-                      ),
+                      style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
                 ),
