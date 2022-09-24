@@ -13,19 +13,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
-  RecipeList? myRecipeList;
+  late Future<RecipeList?> futureRecipeList;
 
   @override
   void initState() {
-    fakeApiCall();
     super.initState();
-  }
 
-  fakeApiCall() async {
-    myRecipeList = await loadRecipes();
-    // for (var element in myRecipeList.recipes) {
-    //   log(element.toString());
-    // }
+    futureRecipeList = loadRecipes();
   }
 
   @override
@@ -84,8 +78,39 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(
               height: 250,
-              child: RecipeCard(
-                fetchedRecipes: myRecipeList?.recipes ?? [],
+              child: FutureBuilder<RecipeList?>(
+                future: futureRecipeList,
+                builder: (context, snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.waiting:
+                      return Center(
+                        child: SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: CircularProgressIndicator(color: Theme.of(context).primaryColorDark,),
+                        ),
+                      );
+                    case ConnectionState.done:
+                    default:
+                      if (snapshot.hasData) {
+                        return RecipeCard(fetchedRecipes: snapshot.data!.recipes);
+                      } else if (snapshot.hasError) {
+                        return Center(
+                          child: Text(
+                            '❌ ❌ ❌ Failed to load recipes',
+                            style: Theme.of(context).textTheme.headline1,
+                          ),
+                        );
+                      } else {
+                        return Center(
+                          child: Text(
+                            '❌ ❌ ❌ No recipes found',
+                            style: Theme.of(context).textTheme.headline1,
+                          ),
+                        );
+                      }
+                  }
+                },
               ),
             ),
             const SizedBox(

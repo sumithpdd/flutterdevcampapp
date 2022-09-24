@@ -14,37 +14,38 @@ class RecipeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        physics: const ScrollPhysics(),
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemCount: fetchedRecipes.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => RecipePage(recipe: fetchedRecipes[index]),
-                  ),
-                );
-              },
-              child: Hero(
-                tag: fetchedRecipes[index].uuid,
-                child: Container(
-                  constraints: const BoxConstraints(
-                    maxWidth: 200,
-                    maxHeight: 240,
-                  ),
-                  decoration: BoxDecoration(
-                    color: cardColorsList[index % cardColorsList.length],
-                    borderRadius: const BorderRadius.all(Radius.circular(40)),
-                  ),
+      physics: const ScrollPhysics(),
+      shrinkWrap: true,
+      scrollDirection: Axis.horizontal,
+      itemCount: fetchedRecipes.length,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => RecipePage(recipe: fetchedRecipes[index]),
+                ),
+              );
+            },
+            child: Hero(
+              tag: fetchedRecipes[index].uuid,
+              child: Container(
+                constraints: const BoxConstraints(
+                  maxWidth: 200,
+                  maxHeight: 240,
+                ),
+                decoration: BoxDecoration(
+                  color: cardColorsList[index % cardColorsList.length],
+                  borderRadius: const BorderRadius.all(Radius.circular(40)),
                 ),
               ),
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 }

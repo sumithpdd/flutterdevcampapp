@@ -11,6 +11,7 @@ Future<RecipeList> loadRecipes() async {
   String jsonRecipes = await _loadRecipes();
   final jsonResponse = jsonDecode(jsonRecipes);
   RecipeList recipeList = RecipeList.fromJson(jsonResponse);
+  await Future.delayed(const Duration(seconds: 3));
 
   return recipeList;
 }
