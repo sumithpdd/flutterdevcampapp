@@ -1,15 +1,15 @@
 [
     {
         "name": "Pasta Primavera",
-        "imageUrl": "https://www.seekpng.com/png/detail/290-2901532_pasta-primavera.png",
+        "imageUrl": "assets/recipe_images/pasta-primavera.png",
         "duration": 30,
         "servingsCount": 2,
         "reviewCount": 347,
         "calories": 675.00
     },
     {
-        "name": "Slow-cooker beef stew",
-        "imageUrl": "https://www.nicepng.com/png/detail/217-2178010_how-to-make-beef-stew-campbells-slow-cooker.png",
+        "name": "Beef stew",
+        "imageUrl": "assets/recipe_images/beef-stew.png",
         "duration": 240,
         "servingsCount": 4,
         "reviewCount": 383,
@@ -17,7 +17,7 @@
     },
     {
         "name": "Sticky Chinese Pork Stir-Fry",
-        "imageUrl": "https://img.lovepik.com/free-png/20220118/lovepik-sliced-pork-png-image_401449372_wh300.png",
+        "imageUrl": "assets/recipe_images/pork-stir-fry.png",
         "duration": 15,
         "servingsCount": 4,
         "reviewCount": 254,

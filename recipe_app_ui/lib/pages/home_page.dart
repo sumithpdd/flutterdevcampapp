@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:recipe_app_ui/constants/constants.dart';
 import 'package:recipe_app_ui/custom_widgets/custom_widgets.dart';
 import 'package:recipe_app_ui/models/models.dart';
@@ -28,6 +29,11 @@ class _HomePageState extends State<HomePage> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Theme.of(context).primaryColor,
+          statusBarBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.dark,
+        ),
         leading: IconButton(
           onPressed: () {},
           color: Theme.of(context).iconTheme.color,

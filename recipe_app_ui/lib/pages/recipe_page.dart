@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:recipe_app_ui/constants/constants.dart';
 import 'package:recipe_app_ui/models/models.dart';
 
@@ -18,12 +19,24 @@ class RecipePage extends StatefulWidget {
 
 class _RecipePageState extends State<RecipePage> {
   int currentIndex = 0;
+  late final Color currentColor;
+
+  @override
+  void initState() {
+    super.initState();
+    currentColor = cardColorsList[widget.colorIndex % cardColorsList.length];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: cardColorsList[widget.colorIndex % cardColorsList.length],
+        backgroundColor: currentColor,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: currentColor,
+          statusBarBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.dark,
+        ),
         actions: [
           IconButton(
             onPressed: () {},
@@ -40,11 +53,31 @@ class _RecipePageState extends State<RecipePage> {
             tag: widget.recipe.uuid,
             child: Container(
               constraints: const BoxConstraints(
-                maxHeight: 250,
+                maxHeight: 300,
               ),
               decoration: BoxDecoration(
-                color: cardColorsList[widget.colorIndex % cardColorsList.length],
-                borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
+                color: currentColor,
+                borderRadius:
+                    const BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
+              ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      widget.recipe.name,
+                      style: Theme.of(context).textTheme.headline1,
+                    ),
+                  ),
+                  Positioned(
+                    right: -80,
+                    child: Image.asset(
+                      widget.recipe.imageUrl,
+                      scale: 2.0,
+                    ),
+                  ),
+                ],
               ),
             ),
           )

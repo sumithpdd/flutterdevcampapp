@@ -23,13 +23,13 @@ class RecipeAppTheme {
     headline3: GoogleFonts.roboto(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: Colors.white,
     ),
     headline6: GoogleFonts.roboto(
       fontSize: 21.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
-    )
+    ),
   );
 
   // Icon Themes

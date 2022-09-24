@@ -44,6 +44,16 @@ class RecipeCard extends StatelessWidget {
                   color: cardColorsList[index % cardColorsList.length],
                   borderRadius: const BorderRadius.all(Radius.circular(40)),
                 ),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.asset(fetchedRecipes[index].imageUrl),
+                    Text(
+                      fetchedRecipes[index].name,
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
