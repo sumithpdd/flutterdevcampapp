@@ -32,9 +32,13 @@ class RecipeAppTheme {
     )
   );
 
-  // Icon Theme
-  static IconThemeData lightIconTheme = const IconThemeData(
+  // Icon Themes
+  static IconThemeData homePageIconTheme = const IconThemeData(
     color: Colors.white,
+  );
+
+  static IconThemeData recipePageIconTheme = const IconThemeData(
+    color: Colors.blueGrey,
   );
 
   // LightMode Theme data
@@ -54,7 +58,8 @@ class RecipeAppTheme {
       primaryColor: homePageBackgroundColor,
       primaryColorDark: homePageFilterListColor,
       textTheme: lightTextTheme,
-      iconTheme: lightIconTheme,
+      iconTheme: homePageIconTheme,
+      primaryIconTheme: recipePageIconTheme,
     );
   }
 }

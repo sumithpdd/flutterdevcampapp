@@ -26,7 +26,10 @@ class RecipeCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => RecipePage(recipe: fetchedRecipes[index]),
+                  builder: (_) => RecipePage(
+                    recipe: fetchedRecipes[index],
+                    colorIndex: index,
+                  ),
                 ),
               );
             },

@@ -7,6 +7,7 @@ class Recipe {
   final int duration;
   final int servingsCount;
   final int reviewCount;
+  final double calories;
 
   Recipe({
     required this.name,
@@ -14,6 +15,7 @@ class Recipe {
     required this.duration,
     required this.servingsCount,
     required this.reviewCount,
+    required this.calories,
   }) : uuid = const Uuid().v4();
 
   factory Recipe.fromJson(Map<String, dynamic> parsedJson) {
@@ -23,10 +25,11 @@ class Recipe {
       duration: parsedJson['duration'],
       servingsCount: parsedJson['servingsCount'],
       reviewCount: parsedJson['reviewCount'],
+      calories: parsedJson['calories'],
     );
   }
 
   @override
   String toString() => 'Recipe(Name:$name -- ImageUrl:$imageUrl -- Duration:$duration -- ServingsCount:$servingsCount '
-      '-- ReviewCount:$reviewCount)';
+      '-- ReviewCount:$reviewCount -- Calories:$calories)';
 }
