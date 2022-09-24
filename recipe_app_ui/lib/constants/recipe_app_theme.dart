@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipe_app_ui/constants/constants.dart';
 
 class RecipeAppTheme {
   // 1 LightMode TextTheme
@@ -7,17 +8,17 @@ class RecipeAppTheme {
     bodyText1: GoogleFonts.roboto(
       fontSize: 10.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: Colors.white,
     ),
     headline1: GoogleFonts.roboto(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      color: Colors.black,
+      color: Colors.white,
     ),
     headline2: GoogleFonts.roboto(
-      fontSize: 21.0,
-      fontWeight: FontWeight.w700,
-      color: Colors.black,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xfff2e2e0),
     ),
     headline3: GoogleFonts.roboto(
       fontSize: 16.0,
@@ -25,15 +26,15 @@ class RecipeAppTheme {
       color: Colors.black,
     ),
     headline6: GoogleFonts.roboto(
-      fontSize: 20.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
+      fontSize: 21.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
     )
   );
 
   // Icon Theme
   static IconThemeData lightIconTheme = const IconThemeData(
-    color: Colors.black,
+    color: Colors.white,
   );
 
   // LightMode Theme data
@@ -45,13 +46,13 @@ class RecipeAppTheme {
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         elevation: 0,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black12,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white12,
         showSelectedLabels: false,
         showUnselectedLabels: false,
       ),
-      primaryColor: Colors.teal.shade100,
-      primaryColorDark: Colors.teal.shade400,
+      primaryColor: homePageBackgroundColor,
+      primaryColorDark: homePageFilterListColor,
       textTheme: lightTextTheme,
       iconTheme: lightIconTheme,
     );

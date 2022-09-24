@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app_ui/constants/constants.dart';
 import 'package:recipe_app_ui/custom_widgets/custom_widgets.dart';
+import 'package:recipe_app_ui/models/models.dart';
+import 'package:recipe_app_ui/services/services.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,6 +13,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
+  RecipeList? myRecipeList;
+
+  @override
+  void initState() {
+    fakeApiCall();
+    super.initState();
+  }
+
+  fakeApiCall() async {
+    myRecipeList = await loadRecipes();
+    // for (var element in myRecipeList.recipes) {
+    //   log(element.toString());
+    // }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,14 +77,16 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               mostPopularRecipesTitle,
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.headline6,
             ),
             const SizedBox(
               height: 20,
             ),
-            const SizedBox(
+            SizedBox(
               height: 250,
-              child: RecipeCard(),
+              child: RecipeCard(
+                fetchedRecipes: myRecipeList?.recipes ?? [],
+              ),
             ),
             const SizedBox(
               height: 20,
