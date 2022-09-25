@@ -5,7 +5,27 @@
         "duration": 30,
         "servingsCount": 2,
         "reviewCount": 347,
-        "calories": 675.00
+        "calories": 675.00,
+        "ingredients": [
+            "3 carrots, peeled and cut into thin strips",
+            "2 medium zucchini or 1 large zucchini, cut into thin strips",
+            "2 yellow squash, cut into thin strips",
+            "1 onion, thinly sliced",
+            "1 yellow bell pepper, cut into thin strips",
+            "1 red bell pepper, cut into thin strips",
+            "1/4 cup olive oil",
+            "Kosher salt and freshly ground black pepper",
+            "1 tablespoon dried Italian herbs or herbes de Provence",
+            "1 pound farfalle (bowtie pasta)",
+            "15 cherry tomatoes, halved",
+            "1/2 cup grated Parmesan"
+        ],
+        "directions": [
+            "Preheat the oven to 450 degrees F.",
+            "On a large heavy baking sheet, toss all of the vegetables with the oil, salt, pepper, and dried herbs to coat. Transfer half of the vegetable mixture to another heavy large baking sheet and arrange evenly over the baking sheets. Bake until the carrots are tender and the vegetables begin to brown, stirring after the first 10 minutes, about 20 minutes total.",
+            "Meanwhile, cook the pasta in a large pot of boiling salted water until al dente, tender but still firm to the bite, about 8 minutes. Drain, reserving 1 cup of the cooking liquid.",
+            "Toss the pasta with the vegetable mixtures in a large bowl to combine. Toss with the cherry tomatoes and enough reserved cooking liquid to moisten. Season the pasta with salt and pepper, to taste. Sprinkle with the Parmesan and serve immediately."
+        ]
     },
     {
         "name": "Beef stew",
@@ -13,7 +33,25 @@
         "duration": 240,
         "servingsCount": 4,
         "reviewCount": 383,
-        "calories": 470.00
+        "calories": 470.00,
+        "ingredients": [
+            "1 onion, chopped",
+            "2 celery sticks, finely chopped",
+            "2 tbsp rapeseed oil",
+            "3 carrots, halved and cut into chunks",
+            "2 bay leaves",
+            "½ pack thyme",
+            "2 tbsp tomato purée",
+            "2 tbsp Worcestershire sauce",
+            "2 beef stock cubes or stock pots",
+            "900g beef for braising such as skirt, buy a whole piece and cut it yourself for bigger chunks or buy ready-diced",
+            "½ small bunch parsley, chopped"
+        ],
+        "directions": [
+            "Fry the onion and celery in 1 tbsp oil over a low heat until they start to soften – about 5 mins. Add the carrots, bay and thyme, fry for 2 mins, stir in the purée and Worcestershire sauce, add 600ml boiling water, stir and tip everything into a slow cooker. Crumble over the stock cubes or add the stock pots and stir, then season with pepper (don’t add salt as the stock may be salty).",
+            "Clean out the frying pan and fry the beef in the remaining oil in batches until it is well browned, then tip each batch into the slow cooker. Cook on low for 8-10 hrs, or on high for 4 hrs.",
+            "If you want to thicken the gravy, mix the cornflour with a splash of cold water to make a paste, then stir in 2 tbsp of the liquid from the slow cooker. Tip back into the slow cooker, stir and cook for a further 30 mins on high. Stir in the parsley and season again to taste. Serve with mash, if you like. Leave to cool before freezing."
+        ]
     },
     {
         "name": "Pork Stir-Fry",
@@ -21,6 +59,23 @@
         "duration": 15,
         "servingsCount": 4,
         "reviewCount": 254,
-        "calories": 723.40
+        "calories": 723.40,
+        "ingredients": [
+            "2 nests medium egg noodles",
+            "2 tsp cornflour",
+            "2 tbsp soy sauce",
+            "1 tbsp honey",
+            "1 tbsp sunflower oil",
+            "250g/9oz pork tenderloin, cut into bite-sized pieces",
+            "thumb-sized piece ginger, finely chopped",
+            "2 garlic cloves, finely chopped",
+            "1 green pepper, deseeded and sliced",
+            "100g mange tout",
+            "1 tsp sesame seed"
+        ],
+        "directions": [
+            "Bring a pan of salted water to the boil and cook the noodles following pack instructions. Meanwhile, mix the cornflour with 1 tbsp water, then stir in the soy sauce and honey, and set aside.",
+            "Heat the oil in a wok over a high heat. Add the pork and cook for 2 mins until browned all over. Add the ginger, garlic, pepper and mangetout, and cook for a further 2 mins. Reduce the heat, then add the soy and honey mixture, stirring and cooking until the sauce bubbles and thickens. Divide the drained noodles between 2 bowls. Top with the pork and vegetables, and finish with a sprinkling of sesame seeds."
+        ]
     }
 ]

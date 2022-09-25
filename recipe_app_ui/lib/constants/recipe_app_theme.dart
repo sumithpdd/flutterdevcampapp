@@ -10,6 +10,11 @@ class RecipeAppTheme {
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
+    bodyText2: GoogleFonts.roboto(
+      fontSize: 15.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    ),
     headline1: GoogleFonts.roboto(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
@@ -24,6 +29,11 @@ class RecipeAppTheme {
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,
+    ),
+    headline4: GoogleFonts.roboto(
+      fontSize: 22.0,
+      fontWeight: FontWeight.w700,
+      color: homePageBackgroundColor,
     ),
     headline6: GoogleFonts.roboto(
       fontSize: 21.0,

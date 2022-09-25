@@ -47,41 +47,180 @@ class _RecipePageState extends State<RecipePage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Hero(
-            tag: widget.recipe.uuid,
-            child: Container(
-              padding: const EdgeInsets.only(left: 8.0, top: 20),
-              constraints: const BoxConstraints(
-                maxHeight: 300,
-              ),
-              decoration: BoxDecoration(
-                color: currentColor,
-                borderRadius:
-                    const BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
-              ),
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Text(
-                    widget.recipe.name,
-                    style: Theme.of(context).textTheme.headline1,
-                    softWrap: true,
-                  ),
-                  Positioned(
-                    right: -80,
-                    child: Image.asset(
-                      widget.recipe.imageUrl,
-                      scale: 2.0,
-                      fit: BoxFit.cover,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Hero(
+              tag: widget.recipe.uuid,
+              child: Container(
+                padding: const EdgeInsets.only(left: 8.0, top: 20),
+                constraints: const BoxConstraints(
+                  maxHeight: 300,
+                ),
+                decoration: BoxDecoration(
+                  color: currentColor,
+                  borderRadius:
+                      const BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
+                ),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Text(
+                      widget.recipe.name,
+                      style: Theme.of(context).textTheme.headline1,
+                      softWrap: true,
                     ),
-                  ),
-                ],
+                    Positioned(
+                      right: -80,
+                      child: Image.asset(
+                        widget.recipe.imageUrl,
+                        scale: 2.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Positioned(
+                      top: 50,
+                      left: 20,
+                      child: RichText(
+                        text: TextSpan(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          children: [
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.schedule_outlined,
+                                color: Theme.of(context).iconTheme.color,
+                                size: 20,
+                              ),
+                            ),
+                            const WidgetSpan(
+                              child: SizedBox(
+                                width: 10,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '${widget.recipe.duration} min',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 100,
+                      left: 20,
+                      child: RichText(
+                        text: TextSpan(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          children: [
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.person,
+                                color: Theme.of(context).iconTheme.color,
+                                size: 20,
+                              ),
+                            ),
+                            const WidgetSpan(
+                              child: SizedBox(
+                                width: 10,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '${widget.recipe.servingsCount} servings',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 150,
+                      left: 20,
+                      child: RichText(
+                        text: TextSpan(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          children: [
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.local_fire_department,
+                                color: Theme.of(context).iconTheme.color,
+                                size: 20,
+                              ),
+                            ),
+                            const WidgetSpan(
+                              child: SizedBox(
+                                width: 10,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '${widget.recipe.calories.floor()} calories',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 200,
+                      left: 20,
+                      child: RichText(
+                        text: TextSpan(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          children: [
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.star_sharp,
+                                color: Theme.of(context).iconTheme.color,
+                                size: 20,
+                              ),
+                            ),
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.star_sharp,
+                                color: Theme.of(context).iconTheme.color,
+                                size: 20,
+                              ),
+                            ),
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.star_sharp,
+                                color: Theme.of(context).iconTheme.color,
+                                size: 20,
+                              ),
+                            ),
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.star_sharp,
+                                color: Theme.of(context).iconTheme.color,
+                                size: 20,
+                              ),
+                            ),
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.star_half,
+                                color: Theme.of(context).iconTheme.color,
+                                size: 20,
+                              ),
+                            ),
+                            const WidgetSpan(
+                              child: SizedBox(
+                                width: 10,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '${widget.recipe.reviewCount} reviews',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          )
-        ],
+            Text(
+              ingredientsTitle,
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).primaryIconTheme.color,

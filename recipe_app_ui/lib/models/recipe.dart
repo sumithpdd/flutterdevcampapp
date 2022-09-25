@@ -7,7 +7,7 @@ class Recipe {
   final int duration;
   final int servingsCount;
   final int reviewCount;
-  final double calories;
+  final double calories; // TODO (Joshua): Add Ingredients and Directions fields
 
   Recipe({
     required this.name,
