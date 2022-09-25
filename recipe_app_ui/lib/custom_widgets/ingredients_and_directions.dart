@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app_ui/constants/constants.dart';
 
 class IngredientsAndDirectionsSection extends StatelessWidget {
   final List<String> ingredients;
@@ -12,6 +13,18 @@ class IngredientsAndDirectionsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          ingredientsTitle,
+          style: Theme.of(context).textTheme.headline4,
+        ),
+        Text(
+          directionsTitle,
+          style: Theme.of(context).textTheme.headline4,
+        ),
+      ],
+    );
   }
 }

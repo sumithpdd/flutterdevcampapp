@@ -103,8 +103,8 @@ class _HomePageState extends State<HomePage> {
                       } else if (snapshot.hasError) {
                         return Center(
                           child: Text(
-                            '❌ ❌ ❌ Failed to load recipes',
-                            style: Theme.of(context).textTheme.headline1,
+                            '❌ Failed to load recipes ❌',
+                            style: Theme.of(context).textTheme.headline2,
                           ),
                         );
                       } else {

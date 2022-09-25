@@ -8,6 +8,8 @@ class Recipe {
   final int servingsCount;
   final int reviewCount;
   final double calories; // TODO (Joshua): Add Ingredients and Directions fields
+  final List<String>? ingredients;
+  final List<String>? directions;
 
   Recipe({
     required this.name,
@@ -16,6 +18,8 @@ class Recipe {
     required this.servingsCount,
     required this.reviewCount,
     required this.calories,
+    this.ingredients,
+    this.directions,
   }) : uuid = const Uuid().v4();
 
   factory Recipe.fromJson(Map<String, dynamic> parsedJson) {
@@ -26,10 +30,24 @@ class Recipe {
       servingsCount: parsedJson['servingsCount'],
       reviewCount: parsedJson['reviewCount'],
       calories: parsedJson['calories'],
+      ingredients: (parsedJson['ingredients'] as List).map((e) => e as String).toList(),
+      directions: (parsedJson['directions'] as List).map((e) => e as String).toList(),
     );
   }
 
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'imageUrl': imageUrl,
+      'duration': duration,
+      'servingsCount': servingsCount,
+      'reviewCount': reviewCount,
+      'calories': calories,
+      'ingredients': ingredients,
+      'directions': directions,
+    };
+  }
+
   @override
-  String toString() => 'Recipe(Name:$name -- ImageUrl:$imageUrl -- Duration:$duration -- ServingsCount:$servingsCount '
-      '-- ReviewCount:$reviewCount -- Calories:$calories)';
+  String toString() => toMap().toString();
 }

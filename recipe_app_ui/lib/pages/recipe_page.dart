@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:recipe_app_ui/constants/constants.dart';
+import 'package:recipe_app_ui/custom_widgets/custom_widgets.dart';
 import 'package:recipe_app_ui/models/models.dart';
 
 class RecipePage extends StatefulWidget {
@@ -54,7 +55,7 @@ class _RecipePageState extends State<RecipePage> {
             Hero(
               tag: widget.recipe.uuid,
               child: Container(
-                padding: const EdgeInsets.only(left: 8.0, top: 20),
+                padding: const EdgeInsets.only(left: 25.0, top: 20),
                 constraints: const BoxConstraints(
                   maxHeight: 300,
                 ),
@@ -215,9 +216,12 @@ class _RecipePageState extends State<RecipePage> {
                 ),
               ),
             ),
-            Text(
-              ingredientsTitle,
-              style: Theme.of(context).textTheme.headline4,
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0, top: 20),
+              child: IngredientsAndDirectionsSection(
+                ingredients: widget.recipe.ingredients!,
+                directions: widget.recipe.directions!,
+              ),
             ),
           ],
         ),
