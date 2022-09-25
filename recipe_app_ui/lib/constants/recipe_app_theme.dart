@@ -41,6 +41,14 @@ class RecipeAppTheme {
     color: Colors.blueGrey,
   );
 
+  // Divider Theme Data
+  static DividerThemeData dividerThemeData = const DividerThemeData(
+    color: Colors.blueGrey,
+    thickness: 2,
+    indent: 20,
+    endIndent: 20,
+  );
+
   // LightMode Theme data
   static ThemeData light() {
     return ThemeData(
@@ -55,6 +63,7 @@ class RecipeAppTheme {
         showSelectedLabels: false,
         showUnselectedLabels: false,
       ),
+      dividerTheme: dividerThemeData,
       primaryColor: homePageBackgroundColor,
       primaryColorDark: homePageFilterListColor,
       textTheme: lightTextTheme,

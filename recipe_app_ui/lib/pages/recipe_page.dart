@@ -52,6 +52,7 @@ class _RecipePageState extends State<RecipePage> {
           Hero(
             tag: widget.recipe.uuid,
             child: Container(
+              padding: const EdgeInsets.only(left: 8.0, top: 20),
               constraints: const BoxConstraints(
                 maxHeight: 300,
               ),
@@ -63,18 +64,17 @@ class _RecipePageState extends State<RecipePage> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      widget.recipe.name,
-                      style: Theme.of(context).textTheme.headline1,
-                    ),
+                  Text(
+                    widget.recipe.name,
+                    style: Theme.of(context).textTheme.headline1,
+                    softWrap: true,
                   ),
                   Positioned(
                     right: -80,
                     child: Image.asset(
                       widget.recipe.imageUrl,
                       scale: 2.0,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ],
