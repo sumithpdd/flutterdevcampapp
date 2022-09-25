@@ -217,10 +217,11 @@ class _RecipePageState extends State<RecipePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 25.0, top: 20),
+              padding: const EdgeInsets.only(left: 25, top: 20, right: 25),
               child: IngredientsAndDirectionsSection(
                 ingredients: widget.recipe.ingredients!,
                 directions: widget.recipe.directions!,
+                colorIndex: widget.colorIndex,
               ),
             ),
           ],

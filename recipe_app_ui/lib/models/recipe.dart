@@ -7,7 +7,7 @@ class Recipe {
   final int duration;
   final int servingsCount;
   final int reviewCount;
-  final double calories; // TODO (Joshua): Add Ingredients and Directions fields
+  final double calories;
   final List<String>? ingredients;
   final List<String>? directions;
 

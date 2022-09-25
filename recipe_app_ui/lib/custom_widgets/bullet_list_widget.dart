@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class BulletList extends StatelessWidget {
   final List<String> strings;
+  final int colorIndex;
 
   const BulletList({
     super.key,
     required this.strings,
+    required this.colorIndex,
   });
 
   @override
