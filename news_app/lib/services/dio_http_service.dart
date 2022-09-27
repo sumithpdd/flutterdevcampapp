@@ -12,13 +12,13 @@ class DioHttpService implements HttpService {
   }
 
   @override
-  // TODO: implement baseUrl
-  String get baseUrl => 'Get from AppConfigs';
+  String get baseUrl => AppConfigs.baseUrl;
 
   @override
   Map<String, String> get headers => {
         'accept': 'application/json',
         'content-type': 'application/json',
+        'Authorization': AppConfigs.newsApiKey,
       };
 
   /// The Dio base options
