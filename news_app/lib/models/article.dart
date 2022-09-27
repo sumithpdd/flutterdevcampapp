@@ -23,7 +23,7 @@ class Article {
 
   factory Article.fromJson(Map<String, dynamic> json) {
     return Article(
-      source: json['source'] != null ? new Source.fromJson(json['source']) : null,
+      source: json['source'] != null ? Source.fromJson(json['source']) : null,
       author: json['author'],
       title: json['title'],
       description: json['description'],
@@ -37,7 +37,7 @@ class Article {
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
 
-    if (this.source != null) {
+    if (source != null) {
       data.addAll({'source': source!.toJson()});
     }
     data.addAll({'author': author});

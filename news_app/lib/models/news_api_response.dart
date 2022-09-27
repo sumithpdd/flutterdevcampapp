@@ -17,7 +17,7 @@ class NewsApiResponse {
     if (json['articles'] != null) {
       jsonArticles = <Article>[];
       json['articles'].forEach((v) {
-        jsonArticles?.add(new Article.fromJson(v));
+        jsonArticles?.add(Article.fromJson(v));
       });
     }
 
