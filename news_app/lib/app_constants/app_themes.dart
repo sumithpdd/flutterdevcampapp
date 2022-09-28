@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 
 /// Styles class holding app theming information
@@ -41,15 +42,21 @@ class AppThemes {
       ),
       backgroundColor: AppColors.getMaterialColorFromColor(AppColors.tertiary),
       appBarTheme: const AppBarTheme(
-        elevation: 0,
         backgroundColor: AppColors.white,
+        elevation: 0,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: AppColors.white,
+          statusBarBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.dark,
+        ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: AppColors.white,
         elevation: 0,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.primary,
         unselectedItemColor: AppColors.tertiary,
-        showSelectedLabels: false,
+        showSelectedLabels: true,
         showUnselectedLabels: false,
       ),
     );
@@ -87,7 +94,6 @@ class TextThemes {
   }
 
   /// Primary text theme
-  /// Uses [AppColors.primary] for all text styles
   static TextTheme get primaryTextTheme {
     return TextTheme(
       bodyText1: AppTextStyles.bodyLg.copyWith(color: AppColors.black),
