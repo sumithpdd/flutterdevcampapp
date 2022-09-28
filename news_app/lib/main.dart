@@ -12,7 +12,7 @@ class NewsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'News App',
+      title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
       theme: AppThemes.lightTheme,
       home: const HomePage(),

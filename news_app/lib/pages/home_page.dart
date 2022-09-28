@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/app_constants/app_constants.dart';
+import 'package:news_app/pages/pages.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,7 +10,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int currentIndex = 0;
+  int currentNavBarIndex = 0;
+  final pages = [
+    const AllArticlesPage(),
+    const CountrySpecificHeadlinesPage(),
+    const VideosPage(),
+    const AlertsPage(),
+    const ProfilePage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         centerTitle: true,
-        title: const Text('News App'),
+        title: const Text(AppStrings.appName),
         titleTextStyle: Theme.of(context).primaryTextTheme.headline2,
         actions: [
           IconButton(
@@ -40,43 +49,44 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      body: pages[currentNavBarIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
+        currentIndex: currentNavBarIndex,
         onTap: (index) {
           setState(() {
-            currentIndex = index;
+            currentNavBarIndex = index;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(
+            icon: const Icon(
               Icons.newspaper_rounded,
             ),
-            label: 'All Articles',
+            label: AppStrings.bottomNavBarLabels[0],
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.manage_search_rounded,
+            icon: const Icon(
+              Icons.travel_explore_rounded,
             ),
-            label: 'Sources',
+            label: AppStrings.bottomNavBarLabels[1],
           ),
           BottomNavigationBarItem(
-            icon: Icon(
+            icon: const Icon(
               Icons.play_circle_rounded,
             ),
-            label: 'Videos',
+            label: AppStrings.bottomNavBarLabels[2],
           ),
           BottomNavigationBarItem(
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_rounded,
             ),
-            label: 'Alerts',
+            label: AppStrings.bottomNavBarLabels[3],
           ),
           BottomNavigationBarItem(
-            icon: Icon(
+            icon: const Icon(
               Icons.person_rounded,
             ),
-            label: 'Profile',
+            label: AppStrings.bottomNavBarLabels[4],
           ),
         ],
       ),
@@ -84,28 +94,69 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+/// [MySearchDelegate] adds functionality to the search icon
+/// on the right of the AppBar.
 class MySearchDelegate extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
-    // TODO: implement buildActions
-    throw UnimplementedError();
+    return [
+      IconButton(
+        onPressed: () {
+          query.isEmpty ? close(context, null) : query = '';
+        },
+        icon: const Icon(Icons.clear_rounded),
+      ),
+    ];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
-    throw UnimplementedError();
+    return IconButton(
+      onPressed: () => close(context, null), // Close searchbar
+      icon: const Icon(Icons.arrow_back_rounded),
+    );
   }
 
   @override
-  Widget buildResults(BuildContext context) {
-    // TODO: implement buildResults
-    throw UnimplementedError();
-  }
+  Widget buildResults(BuildContext context) => Container();
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
-    throw UnimplementedError();
+    // TODO (Joshua): Think of a way to cache previous search queries while still using SearchDelegate
+    List<String> suggestions = [
+      AppStrings.errorStringsForSuggestions[0],
+      AppStrings.errorStringsForSuggestions[1],
+      AppStrings.errorStringsForSuggestions[2],
+    ];
+
+    return ListView.builder(
+      itemCount: suggestions.length,
+      itemBuilder: (context, index) {
+        final suggestion = suggestions[index];
+
+        return ListTile(
+          title: Text(
+            suggestion,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          onTap: () {
+            query = suggestion;
+            showResults(context);
+          },
+        );
+      },
+    );
+  }
+
+  @override
+  void showResults(BuildContext context) {
+    close(context, null); // close search page to pop it off the stack
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => SearchResults(query: query),
+      ),
+    );
+    super.showResults(context);
   }
 }
