@@ -16,7 +16,7 @@ class HeadlineSection extends StatelessWidget {
           autoPlay: true,
         ),
         itemBuilder: (ctx, index, realIdx) {
-          return Text(index.toString());
+          return Center(child: Text(index.toString()));
         },
       ),
     );

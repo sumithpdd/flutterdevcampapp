@@ -1,5 +1,6 @@
 class AppStrings {
   static const String appName = 'News App';
+  static const String searchResultsTitle = 'Search Results';
   static const List<String> bottomNavBarLabels = [
     'All Articles',
     '',

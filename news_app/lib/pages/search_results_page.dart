@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/app_constants/app_constants.dart';
 
 class SearchResults extends StatefulWidget {
   final String query;
@@ -27,7 +28,7 @@ class _SearchResultsState extends State<SearchResults> {
           ),
         ),
         centerTitle: true,
-        title: const Text('Search For Results'),
+        title: const Text(AppStrings.searchResultsTitle),
         titleTextStyle: Theme.of(context).primaryTextTheme.headline2,
       ),
       body: Center(
