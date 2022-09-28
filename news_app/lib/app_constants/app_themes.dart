@@ -39,6 +39,7 @@ class AppThemes {
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         tertiary: AppColors.tertiary,
+        onTertiaryContainer: AppColors.white,
       ),
       backgroundColor: AppColors.getMaterialColorFromColor(AppColors.tertiary),
       appBarTheme: const AppBarTheme(
