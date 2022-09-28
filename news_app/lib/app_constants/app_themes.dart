@@ -32,6 +32,7 @@ class AppThemes {
   static ThemeData get lightTheme {
     return ThemeData(
       brightness: Brightness.light,
+      fontFamily: AppTextStyles.fontFamily,
       primaryColor: AppColors.getMaterialColorFromColor(AppColors.primary),
       textTheme: TextThemes.textTheme,
       primaryTextTheme: TextThemes.primaryTextTheme,

@@ -7,16 +7,16 @@ class HeadlineSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).colorScheme.onTertiaryContainer,
+      color: Theme.of(context).colorScheme.primary,
       child: CarouselSlider.builder(
-        itemCount: 100,
+        itemCount: 50,
         options: CarouselOptions(
           aspectRatio: 2.0,
           enlargeCenterPage: true,
           autoPlay: true,
         ),
         itemBuilder: (ctx, index, realIdx) {
-          return Center(child: Text(index.toString()));
+          return Center(child: Text(index.toString(), style: Theme.of(context).textTheme.headline1,));
         },
       ),
     );
