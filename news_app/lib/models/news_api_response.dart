@@ -1,11 +1,12 @@
+import 'package:equatable/equatable.dart';
 import 'package:news_app/models/models.dart';
 
-class NewsApiResponse {
+class NewsApiResponse extends Equatable {
   final String? status;
   final int? totalResults;
   final List<Article>? articles;
 
-  NewsApiResponse({
+  const NewsApiResponse({
     required this.status,
     required this.totalResults,
     required this.articles,
@@ -37,4 +38,7 @@ class NewsApiResponse {
 
     return data;
   }
+
+  @override
+  List<Object?> get props => [status, totalResults, articles];
 }

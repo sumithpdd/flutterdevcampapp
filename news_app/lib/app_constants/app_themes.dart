@@ -4,6 +4,7 @@ import 'package:news_app/app_constants/app_constants.dart';
 /// Styles class holding app theming information
 class AppThemes {
   /// Dark theme data of the app
+  /// TODO (Joshua): Fix color usage for darkTheme
   static ThemeData get darkTheme {
     return ThemeData(
       brightness: Brightness.dark,
@@ -36,10 +37,20 @@ class AppThemes {
       colorScheme: const ColorScheme.light(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
+        tertiary: AppColors.tertiary,
       ),
+      backgroundColor: AppColors.getMaterialColorFromColor(AppColors.tertiary),
       appBarTheme: const AppBarTheme(
         elevation: 0,
         backgroundColor: AppColors.white,
+      ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        elevation: 0,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: AppColors.primary,
+        unselectedItemColor: AppColors.tertiary,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
       ),
     );
   }
@@ -79,14 +90,14 @@ class TextThemes {
   /// Uses [AppColors.primary] for all text styles
   static TextTheme get primaryTextTheme {
     return TextTheme(
-      bodyText1: AppTextStyles.bodyLg.copyWith(color: AppColors.primary),
-      bodyText2: AppTextStyles.body.copyWith(color: AppColors.primary),
+      bodyText1: AppTextStyles.bodyLg.copyWith(color: AppColors.black),
+      bodyText2: AppTextStyles.body.copyWith(color: AppColors.black),
       subtitle1: AppTextStyles.bodySm.copyWith(color: AppColors.primary),
-      subtitle2: AppTextStyles.bodyXs.copyWith(color: AppColors.primary),
-      headline1: AppTextStyles.h1.copyWith(color: AppColors.primary),
-      headline2: AppTextStyles.h2.copyWith(color: AppColors.primary),
-      headline3: AppTextStyles.h3.copyWith(color: AppColors.primary),
-      headline4: AppTextStyles.h4.copyWith(color: AppColors.primary),
+      subtitle2: AppTextStyles.bodyXs.copyWith(color: AppColors.tertiary),
+      headline1: AppTextStyles.h1.copyWith(color: AppColors.black),
+      headline2: AppTextStyles.h2.copyWith(color: AppColors.black),
+      headline3: AppTextStyles.h3.copyWith(color: AppColors.black),
+      headline4: AppTextStyles.h4.copyWith(color: AppColors.black),
     );
   }
 }

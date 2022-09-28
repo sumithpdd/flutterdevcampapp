@@ -1,8 +1,10 @@
-class Source {
+import 'package:equatable/equatable.dart';
+
+class Source extends Equatable {
   final String? id;
   final String? name;
 
-  Source({
+  const Source({
     required this.id,
     required this.name,
   });
@@ -22,4 +24,7 @@ class Source {
 
     return data;
   }
+
+  @override
+  List<Object?> get props => [id, name];
 }

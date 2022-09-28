@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:news_app/models/models.dart';
 
-class Article {
+class Article extends Equatable {
   final Source? source;
   final String? author;
   final String? title;
@@ -10,7 +11,7 @@ class Article {
   final String? publishedAt;
   final String? content;
 
-  Article({
+  const Article({
     required this.source,
     required this.author,
     required this.title,
@@ -50,4 +51,16 @@ class Article {
 
     return data;
   }
+
+  @override
+  List<Object?> get props => [
+        source,
+        author,
+        title,
+        description,
+        url,
+        urlToImage,
+        publishedAt,
+        content,
+      ];
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/pages/pages.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'News App',
+      debugShowCheckedModeBanner: false,
+      theme: AppThemes.lightTheme,
       home: const HomePage(),
     ),
   );
