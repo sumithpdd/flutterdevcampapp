@@ -10,18 +10,5 @@ abstract class HttpService {
   Future<Map<String, dynamic>> get(
       String endpoint, {
         Map<String, dynamic>? queryParameters,
-        bool forceRefresh = false,
       });
-
-  /// Http post request
-  Future<dynamic> post(
-      String endpoint, {
-        Map<String, dynamic>? queryParameters,
-      });
-
-  /// Http put request
-  Future<dynamic> put();
-
-  /// Http delete request
-  Future<dynamic> delete();
 }

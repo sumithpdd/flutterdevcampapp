@@ -1,14 +1,21 @@
 import 'package:dio/dio.dart';
 import 'package:news_app/app_constants/app_constants.dart';
+import 'package:news_app/services/exceptions/exceptions.dart';
 import 'package:news_app/services/services.dart';
 
 class DioHttpService implements HttpService {
-  late final Dio dio;
+  late final Dio _dio;
 
   DioHttpService({
     Dio? dioOverride,
   }) {
-    dio = dioOverride ?? Dio(baseOptions);
+    final innerDio = Dio(baseOptions);
+    _dio = dioOverride ?? innerDio
+      ..interceptors.add(
+        InterceptorsWrapper(
+          onError: (DioError e, handler) => handler.resolve(e.response!),
+        ),
+      );
   }
 
   @override
@@ -25,36 +32,24 @@ class DioHttpService implements HttpService {
   BaseOptions get baseOptions => BaseOptions(
         baseUrl: baseUrl,
         headers: headers,
+        responseType: ResponseType.json,
       );
 
   @override
   Future<Map<String, dynamic>> get(
     String endpoint, {
     Map<String, dynamic>? queryParameters,
-    bool forceRefresh = false,
-  }) {
-    // TODO: implement get
-    throw UnimplementedError();
-  }
+  }) async {
+    final response = await _dio.get(endpoint, queryParameters: queryParameters);
 
-  @override
-  Future post(
-    String endpoint, {
-    Map<String, dynamic>? queryParameters,
-  }) {
-    // TODO: implement post
-    throw UnimplementedError();
-  }
+    if (response.data == null || response.statusCode != 200) {
+      throw HttpException(
+        title: AppStrings.httpExceptionTitle,
+        statusCode: response.statusCode,
+        message: response.statusMessage,
+      );
+    }
 
-  @override
-  Future put() {
-    // TODO: implement put
-    throw UnimplementedError();
-  }
-
-  @override
-  Future delete() {
-    // TODO: implement delete
-    throw UnimplementedError();
+    return response.data;
   }
 }

@@ -1,2 +1,2 @@
-export 'http_service.dart';
-export 'dio_http_service.dart';
+export 'http_services/http_services.dart';
+export 'storage_service/storage_service.dart';
