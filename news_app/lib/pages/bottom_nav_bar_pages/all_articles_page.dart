@@ -1,3 +1,5 @@
+import 'dart:math' show Random;
+
 import 'package:flutter/material.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/models/models.dart';
@@ -17,6 +19,7 @@ class AllArticlesPage extends StatefulWidget {
 }
 
 class _AllArticlesPageState extends State<AllArticlesPage> {
+  int randomInt = Random().nextInt(5);
   late Future<List<Article>?> futureArticles;
   late Future<List<Article>?> futureHeadlines;
 
@@ -25,7 +28,7 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
     super.initState();
 
     futureArticles = widget.newsRepository.getAllArticles();
-    futureHeadlines = Future.delayed(const Duration(seconds: 2), () => []);
+    futureHeadlines = widget.newsRepository.getHeadlines();
   }
 
   @override
@@ -47,7 +50,7 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
                         width: 60,
                         height: 60,
                         child: CircularProgressIndicator(
-                          color: Theme.of(context).colorScheme.onTertiaryContainer,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     );
@@ -87,7 +90,7 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
                         width: 60,
                         height: 60,
                         child: CircularProgressIndicator(
-                          color: Theme.of(context).colorScheme.onTertiaryContainer,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     );

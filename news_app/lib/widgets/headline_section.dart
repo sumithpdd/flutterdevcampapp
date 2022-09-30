@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/models/models.dart';
+import 'package:news_app/widgets/widgets.dart';
 
 class HeadlineSection extends StatelessWidget {
   final List<Article> fetchedHeadlines;
@@ -19,16 +19,11 @@ class HeadlineSection extends StatelessWidget {
               itemCount: fetchedHeadlines.length,
               options: CarouselOptions(
                 aspectRatio: 2.0,
-                enlargeCenterPage: true,
+                enlargeCenterPage: false,
                 autoPlay: true,
               ),
               itemBuilder: (ctx, index, realIdx) {
-                return Center(
-                  child: Text(
-                    index.toString(),
-                    style: Theme.of(context).textTheme.headline1,
-                  ),
-                );
+                return HeadlineCard(article: fetchedHeadlines[index]);
               },
             ),
     );

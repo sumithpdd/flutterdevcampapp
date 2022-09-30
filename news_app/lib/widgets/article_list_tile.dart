@@ -21,6 +21,7 @@ class ArticleListTileListView extends StatelessWidget {
       itemCount: articles.length,
       itemBuilder: (context, index) {
         return Card(
+          clipBehavior: Clip.antiAlias,
           color: Theme.of(context).colorScheme.onTertiaryContainer,
           child: ListTile(
             dense: true,
@@ -31,9 +32,10 @@ class ArticleListTileListView extends StatelessWidget {
                 width: 80,
                 fit: BoxFit.cover,
                 imageUrl: articles[index].urlToImage == null ? AppStrings.missingImageUrl : articles[index].urlToImage!,
-                placeholder: (context, url) => const SizedBox(
+                placeholder: (context, url) => SizedBox(
+                  height: 60,
                   width: 40,
-                  child: Center(child: CircularProgressIndicator()),
+                  child: Center(child: CircularProgressIndicator(color: Theme.of(context).colorScheme.primary,)),
                 ),
                 errorWidget: (context, url, error) => const Icon(Icons.error_outline_rounded),
               ),
