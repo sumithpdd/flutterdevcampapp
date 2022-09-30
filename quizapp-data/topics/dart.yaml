@@ -1,0 +1,12 @@
+quizzes:
+    -
+        title: Basics
+        description: 'What is dart?'
+        id: dart-basics
+    -
+        title: Templates
+        description: 'Angular''s template syntax'
+        id: dart-templates
+id: dart
+img: dart.png
+title: Dart
