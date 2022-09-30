@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentNavBarIndex = 0;
   final pages = [
-    const AllArticlesPage(),
+    AllArticlesPage(),
     const CountrySpecificHeadlinesPage(),
     const VideosPage(),
     const AlertsPage(),

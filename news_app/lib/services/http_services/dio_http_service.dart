@@ -9,13 +9,7 @@ class DioHttpService implements HttpService {
   DioHttpService({
     Dio? dioOverride,
   }) {
-    final innerDio = Dio(baseOptions);
-    _dio = dioOverride ?? innerDio
-      ..interceptors.add(
-        InterceptorsWrapper(
-          onError: (DioError e, handler) => handler.resolve(e.response!),
-        ),
-      );
+    _dio = Dio(baseOptions);
   }
 
   @override
@@ -40,16 +34,21 @@ class DioHttpService implements HttpService {
     String endpoint, {
     Map<String, dynamic>? queryParameters,
   }) async {
-    final response = await _dio.get(endpoint, queryParameters: queryParameters);
 
-    if (response.data == null || response.statusCode != 200) {
+    try {
+      final response = await _dio.get(endpoint, queryParameters: queryParameters);
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return response.data;
+      }
+    } catch (e) {
       throw HttpException(
         title: AppStrings.httpExceptionTitle,
-        statusCode: response.statusCode,
-        message: response.statusMessage,
+        statusCode: e is DioError ? e.response?.statusCode : 500,
+        message: e is DioError ? e.response?.statusMessage : e.toString(),
       );
     }
 
-    return response.data;
+    throw HttpException();
   }
 }
