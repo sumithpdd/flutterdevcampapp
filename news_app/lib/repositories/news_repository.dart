@@ -33,21 +33,60 @@ class NewsRepository implements BaseRepository {
   }
 
   @override
-  Future<List<Article>> getArticlesMatchingKeyword(String keyword) {
-    // TODO: implement getArticlesMatchingKeyword
-    throw UnimplementedError();
+  Future<List<Article>> getArticlesMatchingKeyword(String keyword) async {
+    final NewsApiResponse? newsApiResponse;
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll({'q': keyword});
+
+    try {
+      final responseJson = await dioHttpServiceClient.get(allArticlesEndpoint, queryParameters: queryParameters);
+
+      newsApiResponse = NewsApiResponse.fromJson(responseJson);
+    } catch (e) {
+      log('Exception: $e');
+
+      rethrow;
+    }
+
+    return newsApiResponse.articles ?? [];
   }
 
   @override
-  Future<List<Article>> getHeadlines() {
-    // TODO: implement getHeadlines
-    throw UnimplementedError();
+  Future<List<Article>> getHeadlines() async {
+    final NewsApiResponse? newsApiResponse;
+
+    try {
+      final responseJson = await dioHttpServiceClient.get(headlinesEndpoint);
+
+      newsApiResponse = NewsApiResponse.fromJson(responseJson);
+    } catch (e) {
+      log('Exception: $e');
+
+      rethrow;
+    }
+
+    return newsApiResponse.articles ?? [];
   }
 
   @override
-  Future<List<Article>> getHeadlinesFromCountry(String languageCode) {
-    // final headlinesFromSpecificCountryEndpoint = '$headlinesEndpoint/sources';
+  Future<List<Article>> getHeadlinesFromCountry(String languageCode) async {
+    final NewsApiResponse? newsApiResponse;
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll({'country': languageCode});
 
-    return Future.delayed(const Duration(seconds: 2), () => []);
+    try {
+      final responseJson = await dioHttpServiceClient.get(
+        headlinesEndpoint,
+        queryParameters: queryParameters,
+      );
+
+      newsApiResponse = NewsApiResponse.fromJson(responseJson);
+    } catch (e) {
+      log('Exception: $e');
+
+      rethrow;
+    }
+
+    return newsApiResponse.articles ?? [];
   }
 }
