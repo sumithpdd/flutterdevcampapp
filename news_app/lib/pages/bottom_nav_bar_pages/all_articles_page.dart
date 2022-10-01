@@ -78,11 +78,14 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
                         final errorMessage = snapshot.error is HttpException
                             ? AppStrings.httpExceptionTryAgainTitle
                             : AppStrings.headlinesListIsEmptyText;
-                        return Center(
-                          child: Text(
-                            errorMessage,
-                            style: Theme.of(context).primaryTextTheme.headline3,
-                            textAlign: TextAlign.center,
+                        return Padding(
+                          padding: const EdgeInsets.only(top: 30),
+                          child: Center(
+                            child: Text(
+                              errorMessage,
+                              style: Theme.of(context).primaryTextTheme.headline3,
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         );
                       } else {
