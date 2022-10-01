@@ -71,7 +71,7 @@ class NewsRepository implements BaseRepository {
   Future<List<Article>> getHeadlines() async {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
-    // Get all headlines in English from yesterday that include a randomized keyword
+    // Get all headlines from the US
     queryParameters.addAll({'country': 'us'});
     //queryParameters.addAll({'category': '"${categories[Random().nextInt(categories.length)]}"'});
 

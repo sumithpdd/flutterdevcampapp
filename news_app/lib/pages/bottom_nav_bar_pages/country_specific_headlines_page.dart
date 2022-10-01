@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/app_constants/app_constants.dart';
+import 'package:news_app/models/models.dart';
 
 class CountrySpecificHeadlinesPage extends StatefulWidget {
   const CountrySpecificHeadlinesPage({Key? key}) : super(key: key);
@@ -9,12 +10,27 @@ class CountrySpecificHeadlinesPage extends StatefulWidget {
 }
 
 class _CountrySpecificHeadlinesPageState extends State<CountrySpecificHeadlinesPage> {
+  late Future<List<Article>?> futureHeadlines;
+
+  @override
+  void initState() {
+    super.initState();
+
+    futureHeadlines = Future.delayed(const Duration(seconds: 0), () => []);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Country Search',
-        style: AppThemes.lightTheme.primaryTextTheme.headline1,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Center(child: Text('Choose a Source:')),
+          ],
+        ),
       ),
     );
   }
