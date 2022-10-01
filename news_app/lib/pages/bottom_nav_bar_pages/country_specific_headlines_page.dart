@@ -28,7 +28,7 @@ class _CountrySpecificHeadlinesPageState extends State<CountrySpecificHeadlinesP
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Center(child: Text('Choose a Source:')),
+            Center(child: Text(AppStrings.chooseASourceText)),
           ],
         ),
       ),

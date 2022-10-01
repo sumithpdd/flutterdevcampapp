@@ -5,9 +5,6 @@ class AppStrings {
   static const List<String> bottomNavBarLabels = [
     'All Articles',
     '',
-    'Videos',
-    'Alerts',
-    'Profile',
   ];
   static const List<String> headlineSourceCountryCodes = [
     'ae', 'ar', 'at', 'au', 'be', 'bg', 'br', 'ca', 'ch',

@@ -14,9 +14,6 @@ class _HomePageState extends State<HomePage> {
   final pages = [
     AllArticlesPage(),
     const CountrySpecificHeadlinesPage(),
-    const VideosPage(),
-    const AlertsPage(),
-    const ProfilePage(),
   ];
 
   @override
@@ -72,24 +69,6 @@ class _HomePageState extends State<HomePage> {
               Icons.travel_explore_rounded,
             ),
             label: AppStrings.bottomNavBarLabels[1],
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.play_circle_rounded,
-            ),
-            label: AppStrings.bottomNavBarLabels[2],
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.notifications_rounded,
-            ),
-            label: AppStrings.bottomNavBarLabels[3],
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.person_rounded,
-            ),
-            label: AppStrings.bottomNavBarLabels[4],
           ),
         ],
       ),
