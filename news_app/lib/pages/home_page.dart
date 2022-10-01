@@ -46,9 +46,11 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
-        child: pages[currentNavBarIndex],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+          child: pages[currentNavBarIndex],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentNavBarIndex,

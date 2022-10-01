@@ -76,12 +76,13 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
                         return HeadlineSection(fetchedHeadlines: snapshot.data!);
                       } else if (snapshot.hasError) {
                         final errorMessage = snapshot.error is HttpException
-                            ? AppStrings.httpExceptionTitle
+                            ? AppStrings.httpExceptionTryAgainTitle
                             : AppStrings.headlinesListIsEmptyText;
                         return Center(
                           child: Text(
-                            '❌ $errorMessage ❌',
-                            style: Theme.of(context).primaryTextTheme.headline2,
+                            errorMessage,
+                            style: Theme.of(context).primaryTextTheme.headline3,
+                            textAlign: TextAlign.center,
                           ),
                         );
                       } else {
@@ -117,13 +118,16 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
                       if (snapshot.hasData) {
                         return ArticleListTileListView(articles: snapshot.data!);
                       } else if (snapshot.hasError) {
-                        final errorMessage = snapshot.error is HttpException
-                            ? snapshot.error.toString()
-                            : AppStrings.articlesListIsEmptyText;
-                        return Center(
-                          child: Text(
-                            '❌ $errorMessage ❌',
-                            style: Theme.of(context).primaryTextTheme.headline2,
+                        return Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [
+                              Center(
+                                child: ErrorCard(),
+                              ),
+                            ],
                           ),
                         );
                       } else {

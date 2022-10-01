@@ -107,12 +107,26 @@ class _CountrySpecificHeadlinesPageState extends State<CountrySpecificHeadlinesP
                             : ArticleListTileListView(articles: snapshot.data!);
                       } else if (snapshot.hasError) {
                         final errorMessage = snapshot.error is HttpException
-                            ? snapshot.error.toString()
+                            ? AppStrings.httpExceptionTryAgainTitle
                             : AppStrings.headlinesListIsEmptyText;
-                        return Center(
-                          child: Text(
-                            '❌ $errorMessage ❌',
-                            style: Theme.of(context).primaryTextTheme.headline2,
+
+                        return Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Center(
+                                child: Text(
+                                  errorMessage,
+                                  style: Theme.of(context).primaryTextTheme.headline3,
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              const Center(
+                                child: ErrorCard(),
+                              ),
+                            ],
                           ),
                         );
                       } else {
