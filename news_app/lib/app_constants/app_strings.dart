@@ -6,7 +6,9 @@ class AppStrings {
     'All Articles',
     '',
   ];
-  static const String defaultSourcePageInfoMessage = 'Default source is set to US. Choose a source to see headlines '
+  static const String refreshingContentText = ' articles loading';
+  static const String defaultSourcePageInfoMessage = 'Default source is set to Ukraine. Choose a source to see '
+      'headlines '
       'from different countries and in their respective languages';
   static const List<String> headlineSourceCountryCodes = [
     'AE', 'AR', 'AT', 'AU', 'BE', 'BG', 'BR', 'CA', 'CH',
@@ -20,15 +22,11 @@ class AppStrings {
 
   /// Error / Exception strings
   static const String articlesListIsEmptyText = 'Articles Currently Not Available';
-  static const List<String> errorStringsForSuggestions = [
-    'Suggestions are currently down 😞',
-    'But at least you have auto-complete 😀',
-    'The quick brown fox 🦊 jumped over the lazy dog 🐶',
-  ];
+  static const String sampleSuggestion = 'Dart';
   static const String headlinesListIsEmptyText = '❌ No headlines found ❌';
   static const String httpExceptionTitle = 'HTTP Error!';
   static const String missingTitle = 'Article Has No Title';
   static const String missingAuthor = 'Unknown';
-  static const String missingImageUrl = 'Unknown';
+  static const String missingImageUrl = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640';
   static const String missingUrl = 'Unknown';
 }

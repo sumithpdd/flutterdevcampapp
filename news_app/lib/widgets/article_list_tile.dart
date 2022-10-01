@@ -67,7 +67,7 @@ class ArticleListTileListView extends StatelessWidget {
             onTap: () async {
               final articleUrl = articles[index].url == null ? AppStrings.missingUrl : articles[index].url!;
               final url = Uri.parse(articleUrl);
-              if (!await launchUrl(url)) {
+              if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
                 throw 'Could not launch $url';
               }
             },

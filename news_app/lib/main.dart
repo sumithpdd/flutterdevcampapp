@@ -11,11 +11,20 @@ class NewsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: AppStrings.appName,
-      debugShowCheckedModeBanner: false,
-      theme: AppThemes.lightTheme,
-      home: const HomePage(),
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: MaterialApp(
+        title: AppStrings.appName,
+        debugShowCheckedModeBanner: false,
+        theme: AppThemes.lightTheme,
+        home: const HomePage(),
+      ),
     );
   }
 }

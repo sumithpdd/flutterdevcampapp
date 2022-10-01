@@ -1,5 +1,4 @@
 import 'dart:developer' as devtools;
-import 'dart:math' show Random;
 
 import 'package:news_app/models/models.dart';
 import 'package:news_app/repositories/repositories.dart';
@@ -15,20 +14,13 @@ class NewsRepository implements BaseRepository {
   // TODO (Joshua): Add Storage Service client
   static const String allArticlesEndpoint = '/everything';
   static const String headlinesEndpoint = '/top-headlines';
-  static const List<String> categories = [
-    'entertainment',
-    'business',
-    'technology',
-    'sports',
-    'health',
-  ];
 
   @override
-  Future<List<Article>> getAllArticles() async {
+  Future<List<Article>> getAllArticles({String? category}) async {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
-    // Get all articles in English from yesterday that include a randomized keyword
-    queryParameters.addAll({'q': '"${categories[Random().nextInt(categories.length)]}"'});
+    // Get all articles in English from yesterday that include a randomized keyword from our category list
+    queryParameters.addAll({'q': '"$category"'});
     queryParameters.addAll({'from': DateTime.now().subtract(const Duration(days: 1)).toIso8601String()});
     queryParameters.addAll({'language': 'en'});
 
@@ -53,6 +45,7 @@ class NewsRepository implements BaseRepository {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll({'q': '"$keyword"'});
+    devtools.log(queryParameters.toString());
 
     try {
       final responseJson = await _dioHttpServiceClient.get(allArticlesEndpoint, queryParameters: queryParameters);
@@ -73,7 +66,6 @@ class NewsRepository implements BaseRepository {
     final queryParameters = <String, dynamic>{};
     // Get all headlines from the US
     queryParameters.addAll({'country': 'us'});
-    //queryParameters.addAll({'category': '"${categories[Random().nextInt(categories.length)]}"'});
 
     try {
       final responseJson = await _dioHttpServiceClient.get(

@@ -1,4 +1,4 @@
-import 'dart:math' show Random;
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:news_app/app_constants/app_constants.dart';
@@ -6,6 +6,14 @@ import 'package:news_app/models/models.dart';
 import 'package:news_app/repositories/repositories.dart';
 import 'package:news_app/services/exceptions/exceptions.dart';
 import 'package:news_app/widgets/widgets.dart';
+
+enum Category {
+  entertainment,
+  business,
+  technology,
+  sports,
+  health,
+}
 
 class AllArticlesPage extends StatefulWidget {
   final NewsRepository newsRepository;
@@ -19,7 +27,7 @@ class AllArticlesPage extends StatefulWidget {
 }
 
 class _AllArticlesPageState extends State<AllArticlesPage> {
-  int randomInt = Random().nextInt(5);
+  int randomInt = Random().nextInt(Category.values.length);
   late Future<List<Article>?> futureArticles;
   late Future<List<Article>?> futureHeadlines;
 
@@ -27,7 +35,7 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
   void initState() {
     super.initState();
 
-    futureArticles = widget.newsRepository.getAllArticles();
+    futureArticles = widget.newsRepository.getAllArticles(category: Category.values[randomInt].name);
     futureHeadlines = widget.newsRepository.getHeadlines();
   }
 
@@ -35,91 +43,102 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            FutureBuilder<List<Article>?>(
-              future: futureHeadlines,
-              builder: (context, snapshot) {
-                switch (snapshot.connectionState) {
-                  case ConnectionState.waiting:
-                    return Center(
-                      child: SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: CircularProgressIndicator(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                    );
-                  case ConnectionState.done:
-                  default:
-                    if (snapshot.hasData) {
-                      return HeadlineSection(fetchedHeadlines: snapshot.data!);
-                    } else if (snapshot.hasError) {
-                      final errorMessage = snapshot.error is HttpException
-                          ? AppStrings.httpExceptionTitle
-                          : AppStrings.headlinesListIsEmptyText;
+      body: RefreshIndicator(
+        onRefresh: () async {
+          setState(() {
+            randomInt = Random().nextInt(Category.values.length);
+            futureArticles = widget.newsRepository.getAllArticles(category: Category.values[randomInt].name);
+            futureHeadlines = widget.newsRepository.getHeadlines();
+          });
+        },
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FutureBuilder<List<Article>?>(
+                future: futureHeadlines,
+                builder: (context, snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.waiting:
                       return Center(
-                        child: Text(
-                          '❌ $errorMessage ❌',
-                          style: Theme.of(context).primaryTextTheme.headline2,
+                        child: SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: CircularProgressIndicator(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                         ),
                       );
-                    } else {
+                    case ConnectionState.done:
+                    default:
+                      if (snapshot.hasData) {
+                        return HeadlineSection(fetchedHeadlines: snapshot.data!);
+                      } else if (snapshot.hasError) {
+                        final errorMessage = snapshot.error is HttpException
+                            ? AppStrings.httpExceptionTitle
+                            : AppStrings.headlinesListIsEmptyText;
+                        return Center(
+                          child: Text(
+                            '❌ $errorMessage ❌',
+                            style: Theme.of(context).primaryTextTheme.headline2,
+                          ),
+                        );
+                      } else {
+                        return Center(
+                          child: Text(
+                            '❌ No headlines found ❌',
+                            style: Theme.of(context).primaryTextTheme.headline1,
+                          ),
+                        );
+                      }
+                  }
+                },
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              FutureBuilder<List<Article>?>(
+                future: futureArticles,
+                builder: (context, snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.waiting:
                       return Center(
-                        child: Text(
-                          '❌ No headlines found ❌',
-                          style: Theme.of(context).primaryTextTheme.headline1,
+                        child: SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: CircularProgressIndicator(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                         ),
                       );
-                    }
-                }
-              },
-            ),
-            const SizedBox(height: 10,),
-            FutureBuilder<List<Article>?>(
-              future: futureArticles,
-              builder: (context, snapshot) {
-                switch (snapshot.connectionState) {
-                  case ConnectionState.waiting:
-                    return Center(
-                      child: SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: CircularProgressIndicator(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                    );
-                  case ConnectionState.done:
-                  default:
-                    if (snapshot.hasData) {
-                      return ArticleListTileListView(articles: snapshot.data!);
-                    } else if (snapshot.hasError) {
-                      final errorMessage = snapshot.error is HttpException
-                          ? snapshot.error.toString()
-                          : AppStrings.articlesListIsEmptyText;
-                      return Center(
-                        child: Text(
-                          '❌ $errorMessage ❌',
-                          style: Theme.of(context).primaryTextTheme.headline2,
-                        ),
-                      );
-                    } else {
-                      return Center(
-                        child: Text(
-                          '❌ No articles found ❌',
-                          style: Theme.of(context).primaryTextTheme.headline1,
-                        ),
-                      );
-                    }
-                }
-              },
-            ),
-          ],
+                    case ConnectionState.done:
+                    default:
+                      if (snapshot.hasData) {
+                        return ArticleListTileListView(articles: snapshot.data!);
+                      } else if (snapshot.hasError) {
+                        final errorMessage = snapshot.error is HttpException
+                            ? snapshot.error.toString()
+                            : AppStrings.articlesListIsEmptyText;
+                        return Center(
+                          child: Text(
+                            '❌ $errorMessage ❌',
+                            style: Theme.of(context).primaryTextTheme.headline2,
+                          ),
+                        );
+                      } else {
+                        return Center(
+                          child: Text(
+                            '❌ No articles found ❌',
+                            style: Theme.of(context).primaryTextTheme.headline1,
+                          ),
+                        );
+                      }
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

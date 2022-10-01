@@ -106,9 +106,7 @@ class MySearchDelegate extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
     // TODO (Joshua): Think of a way to cache previous search queries while still using SearchDelegate
     List<String> suggestions = [
-      AppStrings.errorStringsForSuggestions[0],
-      AppStrings.errorStringsForSuggestions[1],
-      AppStrings.errorStringsForSuggestions[2],
+      AppStrings.sampleSuggestion,
     ];
 
     return ListView.builder(
