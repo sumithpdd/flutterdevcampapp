@@ -6,6 +6,8 @@ class AppStrings {
     'All Articles',
     '',
   ];
+  static const String defaultSourcePageInfoMessage = 'Default source is set to US. Choose a source to see headlines '
+      'from different countries and in their respective languages';
   static const List<String> headlineSourceCountryCodes = [
     'AE', 'AR', 'AT', 'AU', 'BE', 'BG', 'BR', 'CA', 'CH',
     'CN', 'CO', 'CU', 'CZ', 'DE', 'EG', 'FR', 'GB', 'GR',

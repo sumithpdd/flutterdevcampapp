@@ -58,6 +58,19 @@ class _CountrySpecificHeadlinesPageState extends State<CountrySpecificHeadlinesP
                 ),
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: Text(
+                AppStrings.defaultSourcePageInfoMessage,
+                style: Theme.of(context).primaryTextTheme.bodyText1,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             FutureBuilder(
               future: futureHeadlines,
               builder: (context, snapshot) {
