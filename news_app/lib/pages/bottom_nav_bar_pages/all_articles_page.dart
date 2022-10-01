@@ -65,14 +65,14 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
                       return Center(
                         child: Text(
                           '❌ $errorMessage ❌',
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).primaryTextTheme.headline2,
                         ),
                       );
                     } else {
                       return Center(
                         child: Text(
                           '❌ No headlines found ❌',
-                          style: Theme.of(context).textTheme.headline1,
+                          style: Theme.of(context).primaryTextTheme.headline1,
                         ),
                       );
                     }
@@ -100,19 +100,19 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
                       return ArticleListTileListView(articles: snapshot.data!);
                     } else if (snapshot.hasError) {
                       final errorMessage = snapshot.error is HttpException
-                          ? AppStrings.httpExceptionTitle
+                          ? snapshot.error.toString()
                           : AppStrings.articlesListIsEmptyText;
                       return Center(
                         child: Text(
                           '❌ $errorMessage ❌',
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).primaryTextTheme.headline2,
                         ),
                       );
                     } else {
                       return Center(
                         child: Text(
                           '❌ No articles found ❌',
-                          style: Theme.of(context).textTheme.headline1,
+                          style: Theme.of(context).primaryTextTheme.headline1,
                         ),
                       );
                     }

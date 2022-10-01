@@ -1,5 +1,5 @@
 import 'dart:developer' as devtools;
-import 'dart:math';
+import 'dart:math' show Random;
 
 import 'package:news_app/models/models.dart';
 import 'package:news_app/repositories/repositories.dart';

@@ -36,10 +36,11 @@ class AppThemes {
       primaryColor: AppColors.getMaterialColorFromColor(AppColors.primary),
       textTheme: TextThemes.textTheme,
       primaryTextTheme: TextThemes.primaryTextTheme,
-      colorScheme: const ColorScheme.light(
-        primary: AppColors.primary,
-        secondary: AppColors.secondary,
-        tertiary: AppColors.tertiary,
+      colorScheme: ColorScheme.light(
+        primary: AppColors.getMaterialColorFromColor(AppColors.primary),
+        onPrimaryContainer: AppColors.white,
+        secondary: AppColors.getMaterialColorFromColor(AppColors.secondary),
+        tertiary: AppColors.getMaterialColorFromColor(AppColors.tertiary),
         onTertiaryContainer: AppColors.white,
       ),
       backgroundColor: AppColors.getMaterialColorFromColor(AppColors.tertiary),

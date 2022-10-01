@@ -7,12 +7,12 @@ class AppStrings {
     '',
   ];
   static const List<String> headlineSourceCountryCodes = [
-    'ae', 'ar', 'at', 'au', 'be', 'bg', 'br', 'ca', 'ch',
-    'cn', 'co', 'cu', 'cz', 'de', 'eg', 'fr', 'gb', 'gr',
-    'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr',
-    'lt', 'lv', 'ma', 'mx', 'my', 'ng', 'nl', 'no', 'nz',
-    'ph', 'pl', 'pt', 'ro', 'rs', 'ru', 'sa', 'se', 'sg',
-    'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za',
+    'AE', 'AR', 'AT', 'AU', 'BE', 'BG', 'BR', 'CA', 'CH',
+    'CN', 'CO', 'CU', 'CZ', 'DE', 'EG', 'FR', 'GB', 'GR',
+    'HK', 'HU', 'ID', 'IE', 'IL', 'IN', 'IT', 'JP', 'KR',
+    'LT', 'LV', 'MA', 'MX', 'MY', 'NG', 'NL', 'NO', 'NZ',
+    'PH', 'PL', 'PT', 'RO', 'RS', 'RU', 'SA', 'SE', 'SG',
+    'SI', 'SK', 'TH', 'TR', 'TW', 'UA', 'US', 'VE', 'ZA',
   ];
 
 
@@ -23,7 +23,7 @@ class AppStrings {
     'But at least you have auto-complete 😀',
     'The quick brown fox 🦊 jumped over the lazy dog 🐶',
   ];
-  static const String headlinesListIsEmptyText = 'Headlines Currently Not Available';
+  static const String headlinesListIsEmptyText = '❌ No headlines found ❌';
   static const String httpExceptionTitle = 'HTTP Error!';
   static const String missingTitle = 'Article Has No Title';
   static const String missingAuthor = 'Unknown';
