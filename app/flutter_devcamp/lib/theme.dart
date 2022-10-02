@@ -6,6 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'helpers/app_constants.dart';
 
 var appTheme = ThemeData(
+  appBarTheme: AppBarTheme(
+      backgroundColor:
+          AppConstants.hexToColor(AppConstants.appPrimaryColorGreen)),
   bottomAppBarTheme: const BottomAppBarTheme(
     color: Color.fromARGB(221, 175, 175, 175),
   ),

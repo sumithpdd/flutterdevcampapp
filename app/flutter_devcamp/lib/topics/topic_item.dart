@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../helpers/app_constants.dart';
 import '../models/models.dart';
 import '../shared/progress_bar.dart';
 import 'drawer.dart';
@@ -13,6 +14,7 @@ class TopicItem extends StatelessWidget {
     return Hero(
       tag: topic.img,
       child: Card(
+        color: AppConstants.hexToColor(AppConstants.appPrimaryColorGreenLight),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () {

@@ -18,21 +18,35 @@ class FirestoreService {
 
   /// Retrieves a single quiz document
   Future<Quiz> getQuiz(String quizId) async {
-    final response =
-        await rootBundle.loadString('assets/mock_data_quizzes.json');
-
-    final decodedList = jsonDecode(response);
-
-    return Quiz.fromJson(decodedList);
-
-    // var ref = _db.collection('quizzes').doc(quizId);
-    // var snapshot = await ref.get();
-    // return Quiz.fromJson(snapshot.data() ?? {});
+    var ref = _db.collection('quizzes').doc(quizId);
+    var snapshot = await ref.get();
+    return Quiz.fromJson(snapshot.data() ?? {});
   }
 
-  /// Listens to current user's report document in Firestore
-  // Stream<Report> streamReport() {}
+    /// Listens to current user's report document in Firestore
+  Stream<Report> streamReport() {
+    return AuthService().userStream.switchMap((user) {
+      if (user != null) {
+        var ref = _db.collection('reports').doc(user.uid);
+        return ref.snapshots().map((doc) => Report.fromJson(doc.data()!));
+      } else {
+        return Stream.fromIterable([Report()]);
+      }
+    });
+  }
 
   /// Updates the current user's report document after completing quiz
-  //Future<void> updateUserReport(Quiz quiz) {}
+  Future<void> updateUserReport(Quiz quiz) {
+    var user = AuthService().user!;
+    var ref = _db.collection('reports').doc(user.uid);
+
+    var data = {
+      'total': FieldValue.increment(1),
+      'topics': {
+        quiz.topic: FieldValue.arrayUnion([quiz.id])
+      }
+    };
+
+    return ref.set(data, SetOptions(merge: true));
+  }
 }

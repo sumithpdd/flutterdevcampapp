@@ -13,6 +13,8 @@ class AppConstants {
   static const String appPrimaryColorAction = "#009079";
   static const String appPrimaryTileColor = "#009099";
   static const String appPrimaryColorGreen = "#009099";
+  static const String appPrimaryColorGreenLight = "#d1fcff";
+
   static const String appBackgroundColorGray = "#D0D0D0";
 
   static Color hexToColor(String code) {
