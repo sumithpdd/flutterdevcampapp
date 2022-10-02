@@ -48,7 +48,7 @@ class _QuizAppState extends State<QuizApp> {
             catchError: (_, err) => Report(),
             initialData: Report(),
             child: MaterialApp(
-                debugShowCheckedModeBanner: true,
+                debugShowCheckedModeBanner: false,
                 routes: appRoutes,
                 theme: appTheme),
           );
