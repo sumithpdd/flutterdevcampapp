@@ -101,16 +101,13 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             LoginButton(
-                text: 'Sign in with Google',
-                icon: FontAwesomeIcons.google,
-                color:
-                    AppConstants.hexToColor(AppConstants.appPrimaryColorAction),
-                loginMethod: () {
-                  Navigator.of(context)
-                      .pushNamedAndRemoveUntil('/topics', (route) => false);
-                }
-                // AuthService().googleLogin,
-                ),
+              text: 'Sign in with Google',
+              icon: FontAwesomeIcons.google,
+              color:
+                  AppConstants.hexToColor(AppConstants.appPrimaryColorAction),
+              loginMethod: AuthService().googleLogin,
+              // AuthService().googleLogin,
+            ),
           ],
         ),
       ),

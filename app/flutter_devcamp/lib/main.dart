@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_devcamp/home/home.dart';
 import 'package:flutter_devcamp/routes.dart';
 import 'package:flutter_devcamp/services/firestore.dart';
 import 'package:flutter_devcamp/theme.dart';
@@ -7,9 +9,9 @@ import 'services/auth.dart';
 import 'models/models.dart';
 import 'shared/loading.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await Firebase.initializeApp();
   runApp(MultiProvider(
     providers: [
       Provider<AuthService>(create: (_) => AuthService()),
@@ -29,6 +31,7 @@ class QuizApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FlutterDevcamp - Quiz',
       theme: appTheme,
+      initialRoute: '/',
       routes: appRoutes,
     );
   }

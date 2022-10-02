@@ -1,22 +1,18 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import '../models/models.dart';
 
 class FirestoreService {
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
+
   /// Reads all documments from the topics collection
   Future<List<Topic>> getTopics() async {
-    final response =
-        await rootBundle.loadString('assets/mock_data_topics.json');
-
-    final List<dynamic> decodedList = jsonDecode(response) as List;
-    final List<Topic> topics = decodedList.map((listItem) {
-      return Topic.fromJson(listItem);
-    }).toList();
-    // var ref = _db.collection('topics');
-    // var snapshot = await ref.get();
-    // var data = snapshot.docs.map((s) => s.data());
-    // var topics = data.map((d) => Topic.fromJson(d));
+    var ref = _db.collection('topics');
+    var snapshot = await ref.get();
+    var data = snapshot.docs.map((s) => s.data());
+    var topics = data.map((d) => Topic.fromJson(d));
     return topics.toList();
   }
 
