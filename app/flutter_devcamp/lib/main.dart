@@ -11,7 +11,6 @@ import 'shared/loading.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(MultiProvider(
     providers: [
       Provider<AuthService>(create: (_) => AuthService()),
@@ -21,18 +20,43 @@ void main() async {
   ));
 }
 
-class QuizApp extends StatelessWidget {
-  QuizApp({Key? key}) : super(key: key);
+class QuizApp extends StatefulWidget {
+  const QuizApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<QuizApp> createState() => _QuizAppState();
+}
+
+class _QuizAppState extends State<QuizApp> {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'FlutterDevcamp - Quiz',
-      theme: appTheme,
-      initialRoute: '/',
-      routes: appRoutes,
+    return FutureBuilder(
+      // Initialize FlutterFire:
+      future: _initialization,
+      builder: (context, snapshot) {
+        // Check for errors
+        if (snapshot.hasError) {
+          // Error screen
+        }
+
+        // Once complete, show your application
+        if (snapshot.connectionState == ConnectionState.done) {
+          return StreamProvider(
+            create: (_) => FirestoreService().streamReport(),
+            catchError: (_, err) => Report(),
+            initialData: Report(),
+            child: MaterialApp(
+                debugShowCheckedModeBanner: true,
+                routes: appRoutes,
+                theme: appTheme),
+          );
+        }
+
+        // Otherwise, show something whilst waiting for initialization to complete
+        return const MaterialApp(home: LoadingScreen());
+      },
     );
   }
 }

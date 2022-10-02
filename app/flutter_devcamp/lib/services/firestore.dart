@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
+import 'package:rxdart/rxdart.dart';
 import '../models/models.dart';
+import 'auth.dart';
 
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -23,7 +25,7 @@ class FirestoreService {
     return Quiz.fromJson(snapshot.data() ?? {});
   }
 
-    /// Listens to current user's report document in Firestore
+  /// Listens to current user's report document in Firestore
   Stream<Report> streamReport() {
     return AuthService().userStream.switchMap((user) {
       if (user != null) {

@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../helpers/app_constants.dart';
 import '../models/models.dart';
+import '../services/firestore.dart';
 
 class CongratsPage extends StatelessWidget {
   final Quiz quiz;
@@ -43,6 +44,7 @@ class CongratsPage extends StatelessWidget {
             icon: const Icon(FontAwesomeIcons.check),
             label: const Text(' Mark Complete!'),
             onPressed: () {
+              FirestoreService().updateUserReport(quiz);
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 '/topics',

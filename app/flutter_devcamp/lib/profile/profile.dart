@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../helpers/app_constants.dart';
+import '../models/models.dart';
 import '../services/auth.dart';
 import '../shared/shared.dart';
 
@@ -14,6 +16,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    var report = Provider.of<Report>(context);
     var user = AuthService().user;
 
     if (user != null) {
@@ -43,7 +46,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Text(user.email ?? '',
                   style: Theme.of(context).textTheme.headline6),
               const Spacer(),
-              Text('0', style: Theme.of(context).textTheme.headline2),
+              Text('${report.total}',
+                  style: Theme.of(context).textTheme.headline2),
               Text('Quizzes Completed',
                   style: Theme.of(context).textTheme.subtitle2),
               const Spacer(),
