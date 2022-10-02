@@ -35,7 +35,11 @@ class ArticleListTileListView extends StatelessWidget {
                 placeholder: (context, url) => SizedBox(
                   height: 60,
                   width: 40,
-                  child: Center(child: CircularProgressIndicator(color: Theme.of(context).colorScheme.primary,)),
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
                 ),
                 errorWidget: (context, url, error) => const Icon(Icons.error_outline_rounded),
               ),
@@ -53,13 +57,9 @@ class ArticleListTileListView extends StatelessWidget {
                   ),
                   const WidgetSpan(child: SizedBox(width: 10)),
                   TextSpan(
-                    text: DateFormat.yMEd().add_jm().format(
-                          DateTime.parse(
-                            articles[index].publishedAt == null
-                                ? DateTime.now().toString()
-                                : articles[index].publishedAt!,
-                          ),
-                        ),
+                    text: articles[index].publishedAt == null
+                        ? AppStrings.missingDate
+                        : DateFormat.yMEd().add_jm().format(DateTime.parse(articles[index].publishedAt!)),
                   ),
                 ],
               ),

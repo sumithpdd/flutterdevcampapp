@@ -22,7 +22,7 @@ class HeadlineCard extends StatelessWidget {
           final articleUrl = article.url == null ? AppStrings.missingUrl : article.url!;
           final url = Uri.parse(articleUrl);
           if (!await launchUrl(url)) {
-          throw 'Could not launch $url';
+            throw 'Could not launch $url';
           }
         },
         child: Column(
@@ -61,11 +61,9 @@ class HeadlineCard extends StatelessWidget {
                   ),
                   const WidgetSpan(child: SizedBox(width: 10)),
                   TextSpan(
-                    text: DateFormat.yMEd().add_jm().format(
-                          DateTime.parse(
-                            article.publishedAt == null ? DateTime.now().toString() : article.publishedAt!,
-                          ),
-                        ),
+                    text: article.publishedAt == null
+                        ? AppStrings.missingDate
+                        : DateFormat.yMEd().add_jm().format(DateTime.parse(article.publishedAt!)),
                   ),
                 ],
               ),

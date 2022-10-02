@@ -22,7 +22,7 @@ class NewsRepository implements BaseRepository {
     // Get all articles in English from yesterday that include a randomized keyword from our category list
     queryParameters.addAll({'q': '"$category"'});
     queryParameters.addAll({'from': DateTime.now().subtract(const Duration(days: 1)).toIso8601String()});
-    queryParameters.addAll({'language': 'en'});
+    queryParameters.addAll({'language': 'fr'});
 
     try {
       final responseJson = await _dioHttpServiceClient.get(

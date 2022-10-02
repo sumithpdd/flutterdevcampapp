@@ -32,4 +32,5 @@ class AppStrings {
   static const String missingAuthor = 'Unknown';
   static const String missingImageUrl = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640';
   static const String missingUrl = 'Unknown';
+  static const String missingDate = 'Unknown Date';
 }
