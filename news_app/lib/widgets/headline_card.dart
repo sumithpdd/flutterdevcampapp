@@ -21,7 +21,7 @@ class HeadlineCard extends StatelessWidget {
         onTap: () async {
           final articleUrl = article.url == null ? AppStrings.missingUrl : article.url!;
           final url = Uri.parse(articleUrl);
-          if (!await launchUrl(url)) {
+          if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
             throw 'Could not launch $url';
           }
         },
