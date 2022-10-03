@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
+import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/models/models.dart';
 
-class Article extends Equatable {
+class Article extends Equatable with Comparable<Article> {
   final Source? source;
   final String? author;
   final String? title;
@@ -30,7 +31,7 @@ class Article extends Equatable {
       description: json['description'],
       url: json['url'],
       urlToImage: json['urlToImage'],
-      publishedAt: json['publishedAt'],
+      publishedAt: json['publishedAt'] ?? AppStrings.missingDate,
       content: json['content'],
     );
   }
@@ -63,4 +64,9 @@ class Article extends Equatable {
         publishedAt,
         content,
       ];
+
+  @override
+  int compareTo(other) {
+    return other.publishedAt!.compareTo(publishedAt!);
+  }
 }

@@ -1,6 +1,8 @@
 class AppStrings {
   static const String appName = 'News App';
   static const String searchResultsTitle = 'Search Results';
+  static const String headlinesTitle = 'Latest Headlines';
+  static const String articlesTitle = 'Latest Articles';
   static const String chooseASourceText = 'Choose a Source';
   static const List<String> bottomNavBarLabels = [
     'All Articles',

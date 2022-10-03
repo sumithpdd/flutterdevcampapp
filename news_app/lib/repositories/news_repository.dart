@@ -21,8 +21,8 @@ class NewsRepository implements BaseRepository {
     final queryParameters = <String, dynamic>{};
     // Get all articles in English from yesterday that include a randomized keyword from our category list
     queryParameters.addAll({'q': '"$category"'});
-    queryParameters.addAll({'from': DateTime.now().subtract(const Duration(days: 1)).toIso8601String()});
-    queryParameters.addAll({'language': 'fr'});
+    queryParameters.addAll({'from': DateTime.now().subtract(const Duration(days: 2)).toIso8601String()});
+    queryParameters.addAll({'language': 'en'});
 
     try {
       final responseJson = await _dioHttpServiceClient.get(
@@ -36,6 +36,8 @@ class NewsRepository implements BaseRepository {
 
       rethrow;
     }
+
+    newsApiResponse.articles!.sort(); // Sort to have most recent news show up first
 
     return newsApiResponse.articles ?? [];
   }
@@ -57,6 +59,8 @@ class NewsRepository implements BaseRepository {
       rethrow;
     }
 
+    newsApiResponse.articles!.sort(); // Sort according to the date
+
     return newsApiResponse.articles ?? [];
   }
 
@@ -65,7 +69,7 @@ class NewsRepository implements BaseRepository {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
     // Get all headlines from the US
-    queryParameters.addAll({'country': 'us'});
+    queryParameters.addAll({'country': 'gb'});
 
     try {
       final responseJson = await _dioHttpServiceClient.get(
@@ -79,6 +83,8 @@ class NewsRepository implements BaseRepository {
 
       rethrow;
     }
+
+    newsApiResponse.articles!.sort(); // Sort according to the date
 
     return newsApiResponse.articles ?? [];
   }
@@ -101,6 +107,8 @@ class NewsRepository implements BaseRepository {
 
       rethrow;
     }
+
+    newsApiResponse.articles!.sort(); // Sort according to the date
 
     return newsApiResponse.articles ?? [];
   }

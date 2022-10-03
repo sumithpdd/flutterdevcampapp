@@ -56,6 +56,8 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(AppStrings.headlinesTitle, style: Theme.of(context).primaryTextTheme.headline3,),
+              const SizedBox(height: 10,),
               FutureBuilder<List<Article>?>(
                 future: futureHeadlines,
                 builder: (context, snapshot) {
@@ -100,8 +102,10 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
                 },
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
+              Text(AppStrings.articlesTitle, style: Theme.of(context).primaryTextTheme.headline3,),
+              const SizedBox(height: 10,),
               FutureBuilder<List<Article>?>(
                 future: futureArticles,
                 builder: (context, snapshot) {
