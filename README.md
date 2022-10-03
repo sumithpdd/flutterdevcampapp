@@ -7,12 +7,12 @@ In the first week, two apps were assigned to us with mainly focus on UI and work
 ### :shipit: Travel App
 [Travel App README](devcamp_session1/README.md)
 
-#### App Preview:
+#### App Preview pending
 
 ### :shipit: Recipe App
 [Recipe App README](recipe_app_ui/README.md)
 
-#### App Preview:
+#### App Preview pending
 
 ## Week 2: API/HTTP
 Documentation pending
