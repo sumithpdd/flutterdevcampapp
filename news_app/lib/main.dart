@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/pages/pages.dart';
 
 void main() {
-  runApp(const NewsApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    const ProviderScope(
+      child: NewsApp(),
+    ),
+  );
 }
 
 class NewsApp extends StatelessWidget {

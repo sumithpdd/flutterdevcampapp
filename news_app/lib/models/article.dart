@@ -11,6 +11,7 @@ class Article extends Equatable with Comparable<Article> {
   final String? urlToImage;
   final String? publishedAt;
   final String? content;
+  // TODO (Joshua): isSaved property so signed in users can save articles for reading later
 
   const Article({
     required this.source,
