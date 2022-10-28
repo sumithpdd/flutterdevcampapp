@@ -1,1 +1,0 @@
-// TODO (Joshua):Implement Authenticator to help us sign users in via Google

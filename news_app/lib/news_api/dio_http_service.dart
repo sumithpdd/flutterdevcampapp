@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:news_app/app_constants/app_constants.dart';
-import 'package:news_app/services/exceptions/exceptions.dart';
-import 'package:news_app/services/services.dart';
+import 'package:news_app/news_api/exceptions/exceptions.dart';
+import 'package:news_app/news_api/http_service.dart';
 
 class DioHttpService implements HttpService {
   late final Dio _dio;

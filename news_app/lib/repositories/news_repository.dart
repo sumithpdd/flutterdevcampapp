@@ -1,8 +1,8 @@
 import 'dart:developer' as devtools;
 
 import 'package:news_app/models/models.dart';
+import 'package:news_app/news_api/news_api.dart';
 import 'package:news_app/repositories/repositories.dart';
-import 'package:news_app/services/services.dart';
 
 class NewsRepository implements BaseRepository {
   final DioHttpService _dioHttpServiceClient;
