@@ -19,10 +19,11 @@ class NewsRepository implements BaseRepository {
   Future<List<Article>> getAllArticles({String? category}) async {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
-    // Get all articles in English from yesterday that include a randomized keyword from our category list
+    // Get all articles in English from the last 7 days that include a randomized keyword from our category list
     queryParameters.addAll({'q': '"$category"'});
-    queryParameters.addAll({'from': DateTime.now().subtract(const Duration(days: 2)).toIso8601String()});
+    queryParameters.addAll({'from': DateTime.now().subtract(const Duration(days: 7)).toIso8601String()});
     queryParameters.addAll({'language': 'en'});
+    queryParameters.addAll({'sortBy': 'publishedAt'});
 
     try {
       final responseJson = await _dioHttpServiceClient.get(
@@ -37,8 +38,6 @@ class NewsRepository implements BaseRepository {
       rethrow;
     }
 
-    newsApiResponse.articles!.sort(); // Sort to have most recent news show up first
-
     return newsApiResponse.articles ?? [];
   }
 
@@ -46,7 +45,9 @@ class NewsRepository implements BaseRepository {
   Future<List<Article>> getArticlesMatchingKeyword(String keyword) async {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll({'q': '"$keyword"'});
+    queryParameters.addAll({'q': keyword.split(' ').length > 1 ? '"$keyword"' : keyword});
+    queryParameters.addAll({'language': 'en'});
+    queryParameters.addAll({'sortBy': 'publishedAt'});
     devtools.log(queryParameters.toString());
 
     try {
@@ -59,17 +60,16 @@ class NewsRepository implements BaseRepository {
       rethrow;
     }
 
-    newsApiResponse.articles!.sort(); // Sort according to the date
-
     return newsApiResponse.articles ?? [];
   }
 
   @override
-  Future<List<Article>> getHeadlines() async {
+  Future<List<Article>> getHeadlines({String? category}) async {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
     // Get all headlines from the US
     queryParameters.addAll({'country': 'gb'});
+    queryParameters.addAll({'category': category});
 
     try {
       final responseJson = await _dioHttpServiceClient.get(
@@ -90,10 +90,10 @@ class NewsRepository implements BaseRepository {
   }
 
   @override
-  Future<List<Article>> getHeadlinesFromCountry(String languageCode) async {
+  Future<List<Article>> getHeadlinesFromCountry(String isoCode) async {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll({'country': languageCode});
+    queryParameters.addAll({'country': isoCode});
 
     try {
       final responseJson = await _dioHttpServiceClient.get(

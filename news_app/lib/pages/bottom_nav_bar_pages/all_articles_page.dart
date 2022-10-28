@@ -3,17 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/models/models.dart';
+import 'package:news_app/news/news.dart';
 import 'package:news_app/repositories/repositories.dart';
 import 'package:news_app/news_api/news_api.dart';
 import 'package:news_app/widgets/widgets.dart';
-
-enum Category {
-  entertainment,
-  business,
-  technology,
-  sports,
-  health,
-}
 
 class AllArticlesPage extends StatefulWidget {
   final NewsRepository newsRepository;
@@ -27,7 +20,7 @@ class AllArticlesPage extends StatefulWidget {
 }
 
 class _AllArticlesPageState extends State<AllArticlesPage> {
-  int randomInt = Random().nextInt(Category.values.length);
+  int randomInt = Random().nextInt(ArticleCategory.values.length);
   late Future<List<Article>?> futureArticles;
   late Future<List<Article>?> futureHeadlines;
 
@@ -35,7 +28,7 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
   void initState() {
     super.initState();
 
-    futureArticles = widget.newsRepository.getAllArticles(category: Category.values[randomInt].name);
+    futureArticles = widget.newsRepository.getAllArticles(category: ArticleCategory.values[randomInt].name);
     futureHeadlines = widget.newsRepository.getHeadlines();
   }
 
@@ -46,8 +39,8 @@ class _AllArticlesPageState extends State<AllArticlesPage> {
       body: RefreshIndicator(
         onRefresh: () async {
           setState(() {
-            randomInt = Random().nextInt(Category.values.length);
-            futureArticles = widget.newsRepository.getAllArticles(category: Category.values[randomInt].name);
+            randomInt = Random().nextInt(ArticleCategory.values.length);
+            futureArticles = widget.newsRepository.getAllArticles(category: ArticleCategory.values[randomInt].name);
             futureHeadlines = widget.newsRepository.getHeadlines();
           });
         },
