@@ -1,1 +1,4 @@
-export 'categories/category.dart';
+export 'articles/articles.dart';
+export 'categories/categories.dart';
+export 'headlines/headlines.dart';
+export 'views/views.dart';

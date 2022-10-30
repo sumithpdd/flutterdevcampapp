@@ -1,15 +1,22 @@
 import 'dart:developer' as devtools;
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/models/models.dart';
 import 'package:news_app/news_api/news_api.dart';
 import 'package:news_app/repositories/repositories.dart';
+
+final newsRepositoryProvider = Provider<NewsRepository>((ref) {
+  final dioHttpClient = ref.watch(dioProvider);
+
+  return NewsRepository(dioHttpServiceClient: dioHttpClient);
+});
 
 class NewsRepository implements BaseRepository {
   final DioHttpService _dioHttpServiceClient;
 
   NewsRepository({
-    DioHttpService? dioHttpServiceOverride,
-  }) : _dioHttpServiceClient = dioHttpServiceOverride ?? DioHttpService();
+    required dioHttpServiceClient,
+  }) : _dioHttpServiceClient = dioHttpServiceClient;
 
   // TODO (Joshua): Add Storage Service client
   static const String allArticlesEndpoint = '/everything';
@@ -67,9 +74,13 @@ class NewsRepository implements BaseRepository {
   Future<List<Article>> getHeadlines({String? category}) async {
     final NewsApiResponse? newsApiResponse;
     final queryParameters = <String, dynamic>{};
-    // Get all headlines from the US
+    // Get all headlines from the UK
+    // TODO (Joshua): Future addition, give user the option to set the default country for the headlines on the All
+    //  Articles page
     queryParameters.addAll({'country': 'gb'});
-    queryParameters.addAll({'category': category});
+    if (category != null) {
+      queryParameters.addAll({'category': category});
+    }
 
     try {
       final responseJson = await _dioHttpServiceClient.get(

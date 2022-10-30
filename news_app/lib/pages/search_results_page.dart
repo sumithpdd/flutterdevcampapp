@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/models/models.dart';
 import 'package:news_app/news_api/news_api.dart';
 import 'package:news_app/repositories/repositories.dart';
 import 'package:news_app/widgets/widgets.dart';
 
-class SearchResults extends StatefulWidget {
+class SearchResults extends ConsumerStatefulWidget {
   final String query;
 
   const SearchResults({
@@ -14,10 +15,10 @@ class SearchResults extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<SearchResults> createState() => _SearchResultsState();
+  ConsumerState<SearchResults> createState() => _SearchResultsState();
 }
 
-class _SearchResultsState extends State<SearchResults> {
+class _SearchResultsState extends ConsumerState<SearchResults> {
   late final NewsRepository newsRepository;
   late Future<List<Article>?> futureArticles;
 
@@ -25,7 +26,7 @@ class _SearchResultsState extends State<SearchResults> {
   void initState() {
     super.initState();
 
-    newsRepository = NewsRepository();
+    newsRepository = ref.read(newsRepositoryProvider);
     futureArticles = newsRepository.getArticlesMatchingKeyword(widget.query);
   }
 

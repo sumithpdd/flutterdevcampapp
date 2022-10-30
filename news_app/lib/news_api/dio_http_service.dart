@@ -1,7 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/news_api/exceptions/exceptions.dart';
 import 'package:news_app/news_api/http_service.dart';
+
+final dioProvider = Provider<DioHttpService>((ref) {
+  return DioHttpService();
+});
 
 class DioHttpService implements HttpService {
   late final Dio _dio;

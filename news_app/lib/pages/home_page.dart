@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/app_constants/app_constants.dart';
+import 'package:news_app/news/news.dart';
 import 'package:news_app/pages/pages.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentNavBarIndex = 0;
   final pages = [
-    AllArticlesPage(),
+    const LatestHeadlinesAndArticles(),
     const CountrySpecificHeadlinesPage(),
   ];
 
