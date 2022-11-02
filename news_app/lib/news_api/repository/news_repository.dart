@@ -3,7 +3,6 @@ import 'dart:developer' as devtools;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/models/models.dart';
 import 'package:news_app/news_api/news_api.dart';
-import 'package:news_app/repositories/repositories.dart';
 
 final newsRepositoryProvider = Provider<NewsRepository>((ref) {
   final dioHttpClient = ref.watch(dioProvider);
