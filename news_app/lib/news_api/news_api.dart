@@ -1,2 +1,2 @@
-export 'dio_http_service.dart';
+export 'service/service.dart';
 export 'exceptions/exceptions.dart';
