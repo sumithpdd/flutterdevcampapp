@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart' show describeEnum;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final currentCategoryProvider = StateProvider<ArticleCategory?>(
@@ -15,8 +14,4 @@ enum ArticleCategory {
   science,
   sports,
   technology,
-}
-
-extension SelectedArticleCategory on ArticleCategory {
-  String get name => describeEnum(this);
 }
