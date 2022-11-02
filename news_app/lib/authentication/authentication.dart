@@ -1,3 +1,3 @@
 export 'models/models.dart';
-export 'provider/auth_state_notifier.dart';
+export 'provider/provider.dart';
 export 'service/service.dart';

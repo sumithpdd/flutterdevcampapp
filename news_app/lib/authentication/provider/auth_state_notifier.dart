@@ -3,6 +3,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/authentication/authentication.dart';
 import 'package:news_app/storage/storage.dart';
 
+final authStateProvider = StateNotifierProvider.autoDispose<AuthStateNotifier, AuthState>((_) => AuthStateNotifier());
+
+final isLoggedInProvider = Provider.autoDispose<bool>((ref) {
+  final authState = ref.watch(authStateProvider);
+  return authState.result == AuthResult.success;
+});
+
+final userProvider = Provider.autoDispose<User?>(
+  (ref) => ref.watch(authStateProvider).user,
+);
+
 class AuthStateNotifier extends StateNotifier<AuthState> {
   final _authService = const AuthService();
   final _userInfoStorage = const UserInfoStorage();
