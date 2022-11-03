@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app/app_constants/app_constants.dart';
-import 'package:news_app/models/models.dart';
+import 'package:news_app/news/models/models.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HeadlineCard extends StatelessWidget {

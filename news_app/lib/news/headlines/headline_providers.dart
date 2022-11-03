@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:news_app/models/models.dart' show Article;
-import 'package:news_app/news/categories/categories.dart';
+import 'package:news_app/news/news.dart';
 import 'package:news_app/news_api/news_api.dart';
 
 final defaultHeadlinesProvider = FutureProvider.autoDispose<List<Article>>((ref) async {

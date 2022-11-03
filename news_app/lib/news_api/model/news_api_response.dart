@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:news_app/models/models.dart';
+import 'package:news_app/news/news.dart';
 
 class NewsApiResponse extends Equatable {
   final String? status;

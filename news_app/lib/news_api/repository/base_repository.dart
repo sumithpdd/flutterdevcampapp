@@ -1,4 +1,4 @@
-import 'package:news_app/models/models.dart' show Article;
+import 'package:news_app/news/news.dart';
 
 /// [BaseRepository] interface
 abstract class BaseRepository {

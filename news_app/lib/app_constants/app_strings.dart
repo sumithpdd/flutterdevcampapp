@@ -1,9 +1,13 @@
+import 'package:flutter/foundation.dart' show immutable;
+
+@immutable
 class AppStrings {
   static const String appName = 'News App';
   static const String searchResultsTitle = 'Search Results';
   static const String headlinesTitle = 'Latest Headlines';
   static const String articlesTitle = 'Latest Articles';
-  static const String chooseASourceText = 'Choose a Source';
+  static const String chooseASourceText = 'Choose a Country';
+  static const String profilePageCallToAction = 'Save Articles. Read Offline. Choose News Outlets.';
   static const List<String> bottomNavBarLabels = [
     'All Articles',
     '',
@@ -21,7 +25,6 @@ class AppStrings {
     'SI', 'SK', 'TH', 'TR', 'TW', 'UA', 'US', 'VE', 'ZA',
   ];
 
-
   /// Error / Exception strings
   static const String articlesNotFoundImageJpg = 'https://ih1.redbubble.net/image.322905870.6945/st,small,845x845-pad,'
       '1000x1000,f8f8f8.jpg';
@@ -35,4 +38,6 @@ class AppStrings {
   static const String missingImageUrl = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640';
   static const String missingUrl = 'Unknown';
   static const String missingDate = 'Unknown Date';
+
+  const AppStrings._();
 }

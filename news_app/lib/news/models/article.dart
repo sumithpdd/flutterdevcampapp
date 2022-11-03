@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:news_app/app_constants/app_constants.dart';
-import 'package:news_app/models/models.dart';
+import 'package:news_app/news/models/models.dart';
 
 class Article extends Equatable with Comparable<Article> {
   final Source? source;

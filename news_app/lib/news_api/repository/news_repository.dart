@@ -1,7 +1,7 @@
 import 'dart:developer' as devtools;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:news_app/models/models.dart';
+import 'package:news_app/news/news.dart';
 import 'package:news_app/news_api/news_api.dart';
 
 final newsRepositoryProvider = Provider<NewsRepository>((ref) {

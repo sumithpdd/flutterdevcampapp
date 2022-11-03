@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/app_constants/app_constants.dart';
-import 'package:news_app/models/models.dart';
+import 'package:news_app/news/news.dart';
 import 'package:news_app/news_api/news_api.dart';
-import 'package:news_app/widgets/widgets.dart';
 
 class SearchResults extends ConsumerStatefulWidget {
   final String query;
