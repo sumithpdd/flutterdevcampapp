@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/app_constants/app_constants.dart';
+import 'package:news_app/authentication/authentication.dart';
 import 'package:news_app/news/news.dart';
 import 'package:news_app/pages/pages.dart';
+import 'package:news_app/profile/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,9 +15,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentNavBarIndex = 0;
-  final pages = [
+  final guestPages = [
     const LatestHeadlinesAndArticles(),
     const CountrySpecificHeadlinesPage(),
+    const LoginScreen(),
+  ];
+  final userPages = [
+    const LatestHeadlinesAndArticles(),
+    const CountrySpecificHeadlinesPage(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -50,7 +59,16 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
-          child: pages[currentNavBarIndex],
+          child: Consumer(
+            builder: (context, ref, child) {
+              final isLoggedIn = ref.watch(isLoggedInProvider);
+              if (isLoggedIn) {
+                return userPages[currentNavBarIndex];
+              } else {
+                return guestPages[currentNavBarIndex];
+              }
+            },
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -72,6 +90,12 @@ class _HomePageState extends State<HomePage> {
               Icons.travel_explore_rounded,
             ),
             label: AppStrings.bottomNavBarLabels[1],
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(
+              Icons.person_rounded,
+            ),
+            label: AppStrings.bottomNavBarLabels[2],
           ),
         ],
       ),

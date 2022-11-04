@@ -8,9 +8,11 @@ class AppStrings {
   static const String articlesTitle = 'Latest Articles';
   static const String chooseASourceText = 'Choose a Country';
   static const String profilePageCallToAction = 'Save Articles. Read Offline. Choose News Outlets.';
+  static const String signInWithGoogleText = 'Sign In with Google';
   static const List<String> bottomNavBarLabels = [
     'All Articles',
     '',
+    'Profile',
   ];
   static const String refreshingContentText = ' articles loading';
   static const String defaultSourcePageInfoMessage = 'Default source is set to US. Choose a source to see '
