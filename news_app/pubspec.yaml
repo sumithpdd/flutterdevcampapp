@@ -44,7 +44,6 @@ dependencies:
   flutter_riverpod: ^2.0.2
   google_sign_in: ^5.4.2
   intl: ^0.17.0
-  isar: ^3.0.2
   shimmer: ^2.0.0
   url_launcher: ^6.1.5
 
