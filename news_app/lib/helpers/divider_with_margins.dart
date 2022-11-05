@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
 class DividerWithMargins extends StatelessWidget {
-  const DividerWithMargins({super.key});
+  final double marginHeight;
+
+  const DividerWithMargins({
+    required this.marginHeight,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
+      children: [
         SizedBox(
-          height: 20,
+          height: marginHeight,
         ),
-        Divider(),
+        const Divider(),
         SizedBox(
-          height: 20,
+          height: marginHeight,
         )
       ],
     );
