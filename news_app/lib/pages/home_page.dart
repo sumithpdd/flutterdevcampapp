@@ -18,12 +18,12 @@ class _HomePageState extends State<HomePage> {
   final guestPages = [
     const LatestHeadlinesAndArticles(),
     const CountrySpecificHeadlinesPage(),
-    const LoginScreen(),
+    const LoginView(),
   ];
   final userPages = [
     const LatestHeadlinesAndArticles(),
     const CountrySpecificHeadlinesPage(),
-    const ProfileScreen(),
+    const ProfileView(),
   ];
 
   @override

@@ -7,8 +7,9 @@ class AppStrings {
   static const String headlinesTitle = 'Latest Headlines';
   static const String articlesTitle = 'Latest Articles';
   static const String chooseASourceText = 'Choose a Country';
-  static const String profilePageCallToAction = 'Save Articles. Read Offline. Choose News Outlets.';
+  static const String profilePageCallToAction = 'Save Articles. Read Offline.\nChoose News Outlets.';
   static const String signInWithGoogleText = 'Sign In with Google';
+  static const String logOut = 'Logout';
   static const List<String> bottomNavBarLabels = [
     'All Articles',
     '',
