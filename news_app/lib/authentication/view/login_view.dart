@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/authentication/authentication.dart';
-import 'package:news_app/helpers/helpers.dart';
 
 class LoginView extends ConsumerWidget {
   const LoginView({
@@ -20,14 +19,6 @@ class LoginView extends ConsumerWidget {
           children: [
             const SizedBox(
               height: 20,
-            ),
-            Text(
-              'FirePod News App',
-              style: Theme.of(context).primaryTextTheme.headline1,
-              textAlign: TextAlign.center,
-            ),
-            const DividerWithMargins(
-              marginHeight: 20,
             ),
             Expanded(child: loginScreenSvg),
             const SizedBox(

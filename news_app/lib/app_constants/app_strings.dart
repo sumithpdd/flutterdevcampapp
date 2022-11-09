@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
 class AppStrings {
-  static const String appName = 'News App';
+  static const String appName = 'RiverBase News';
   static const String searchResultsTitle = 'Search Results';
   static const String headlinesTitle = 'Latest Headlines';
   static const String articlesTitle = 'Latest Articles';
