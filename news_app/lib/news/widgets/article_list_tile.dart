@@ -14,7 +14,7 @@ class ArticleListTileListView extends StatelessWidget {
     required this.articles,
   }) : super(key: key);
 
-  // TODO (Joshua): Add an articles notifier to help with updating and showing which articles get saved or nto
+  // TODO (Joshua): Add an articles notifier to help with updating and showing which articles get saved or unsaved
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
