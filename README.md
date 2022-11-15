@@ -24,7 +24,7 @@ As part of the Dev Camp organized by Google Developer Group in London, I had the
 #### App Preview pending
 
 ### :shipit: News App
-Flutter app that at first started as working with APIs in Flutter assignment. After learning from gurus like [Sumith](https://twitter.com/sumithpdd?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), [Majid](https://twitter.com/mhadaily?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q) and [Roa](https://twitter.com/roaakdm?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), the "animation queen" herself, I later extended it to incorporate Firebase, Riverpod and some animations.
+Flutter app that at first started as working with APIs in Flutter assignment. After learning from gurus like [Sumith](https://twitter.com/sumithpdd?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), [Majid](https://twitter.com/mhadaily?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q) and [Roa](https://twitter.com/roaakdm?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), the "animation queen" herself, I decided to take it to the next level and am currently extending it to incorporate Firebase (50%), Riverpod(80%), some animations(0%) and tests (0%).
 
 [News App README](news_app/README.md)
 
