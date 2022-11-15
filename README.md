@@ -14,18 +14,26 @@ As part of the Dev Camp organized by Google Developer Group in London, I had the
 
 ## App Previews from Apps Created
 ### :shipit: Travel App
-[Travel App README](devcamp_session1/README.md)
+#### App Preview:
 
-#### App Preview pending
+
+https://user-images.githubusercontent.com/40675392/201946877-440416ba-2036-4680-b1ea-2ae962b33221.mp4
+
+
 
 ### :shipit: Recipe App
-[Recipe App README](recipe_app_ui/README.md)
+#### App Preview:
 
-#### App Preview pending
+
+https://user-images.githubusercontent.com/40675392/201946794-ade44d07-72d2-42a9-9e46-032876c3ea17.mp4
+
+
 
 ### :shipit: News App
-Flutter app that at first started as working with APIs in Flutter assignment. After learning from gurus like [Sumith](https://twitter.com/sumithpdd?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), [Majid](https://twitter.com/mhadaily?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q) and [Roa](https://twitter.com/roaakdm?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), the "animation queen" herself, I decided to take it to the next level and am currently extending it to incorporate Firebase (50%), Riverpod(80%), some animations(0%) and tests (0%).
+Flutter app that at first started as working with APIs in Flutter assignment. After learning from gurus like [Sumith](https://twitter.com/sumithpdd?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), [Majid](https://twitter.com/mhadaily?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q) and [Roa](https://twitter.com/roaakdm?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), the "animation queen" herself, I decided to take it to the next level and am currently extending it to incorporate Firebase (50%), Riverpod(80%), some animations(0%) and tests (0%). It's named RiverBase news simply because it uses Riverpod and Firebase .. ba-dum-tss
 
-[News App README](news_app/README.md)
+#### App Preview:
+Still in progress 😅
 
-#### App Preview pending
+https://user-images.githubusercontent.com/40675392/201949068-69f0eab0-04a8-48f8-8ed6-90833ad73a9d.mp4
+
