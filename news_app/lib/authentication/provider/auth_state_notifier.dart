@@ -5,6 +5,11 @@ import 'package:news_app/storage/storage.dart';
 
 final authStateProvider = StateNotifierProvider.autoDispose<AuthStateNotifier, AuthState>((_) => AuthStateNotifier());
 
+final isLoadingProvider = Provider.autoDispose<bool>((ref) {
+  final authState = ref.watch(authStateProvider);
+  return authState.isLoading;
+});
+
 final isLoggedInProvider = Provider.autoDispose<bool>((ref) {
   final authState = ref.watch(authStateProvider);
   return authState.result == AuthResult.success;

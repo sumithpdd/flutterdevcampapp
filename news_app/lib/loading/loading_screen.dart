@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:news_app/app_constants/app_constants.dart';
-import 'package:news_app/authentication/view/loading/loading_screen_controller.dart';
+import 'package:news_app/loading/loading.dart';
 
 class LoadingScreen {
   LoadingScreen._sharedInstance();

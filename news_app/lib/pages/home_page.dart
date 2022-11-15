@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/authentication/authentication.dart';
+import 'package:news_app/loading/loading.dart';
 import 'package:news_app/news/news.dart';
 import 'package:news_app/pages/pages.dart';
 import 'package:news_app/profile/profile.dart';
@@ -61,6 +62,19 @@ class _HomePageState extends ConsumerState<HomePage> {
           padding: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
           child: Consumer(
             builder: (context, ref, child) {
+              ref.listen<bool>(
+                isLoadingProvider,
+                (_, isLoading) {
+                  if (isLoading) {
+                    LoadingScreen.instance().show(
+                      context: context,
+                    );
+                  } else {
+                    LoadingScreen.instance().hide();
+                  }
+                },
+              );
+
               final isLoggedIn = ref.watch(isLoggedInProvider);
               if (isLoggedIn) {
                 return userPages[currentNavBarIndex];

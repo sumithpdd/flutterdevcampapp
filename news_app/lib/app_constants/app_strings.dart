@@ -28,7 +28,6 @@ class AppStrings {
     'SI', 'SK', 'TH', 'TR', 'TW', 'UA', 'US', 'VE', 'ZA',
   ];
   static const loading = 'Loading...';
-  static const loggingOut = 'Logging Out...';
 
   /// Error / Exception strings
   static const articlesNotFoundImageJpg = 'https://ih1.redbubble.net/image.322905870.6945/st,small,845x845-pad,'
