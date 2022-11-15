@@ -14,6 +14,7 @@ class AppStrings {
     '',
     'Profile',
   ];
+  static const List<String> sampleSuggestions = ['Ukraine', 'World Cup', 'Elon Musk'];
   static const String refreshingContentText = ' articles loading';
   static const String defaultSourcePageInfoMessage = 'Default source is set to US. Choose a source to see '
       'headlines '
@@ -32,10 +33,9 @@ class AppStrings {
       '1000x1000,f8f8f8.jpg';
   static const String articlesNotFoundImagePng = 'https://assets.stickpng.com/images/5845cd230b2a3b54fdbaecf7.png';
   static const String articlesListIsEmptyText = 'Articles Currently Not Available';
-  static const String sampleSuggestion = 'Dart';
   static const String headlinesListIsEmptyText = '❌ No headlines found ❌';
   static const String httpExceptionTryAgainTitle = 'Service appears to be down. Please try again later.';
-  static const String missingTitle = 'Article Has No Title';
+  static const String missingTitle = 'Missing Title';
   static const String missingAuthor = 'Unknown';
   static const String missingImageUrl = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640';
   static const String missingUrl = 'Unknown';

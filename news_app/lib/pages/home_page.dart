@@ -6,14 +6,14 @@ import 'package:news_app/news/news.dart';
 import 'package:news_app/pages/pages.dart';
 import 'package:news_app/profile/profile.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends ConsumerState<HomePage> {
   int currentNavBarIndex = 0;
   final guestPages = [
     const LatestHeadlinesAndArticles(),
@@ -131,10 +131,8 @@ class MySearchDelegate extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO (Joshua): Think of a way to cache previous search queries while still using SearchDelegate
-    List<String> suggestions = [
-      AppStrings.sampleSuggestion,
-    ];
+    // TODO (Joshua): Cache previous search queries and show them as suggestions
+    List<String> suggestions = AppStrings.sampleSuggestions;
 
     return ListView.builder(
       itemCount: suggestions.length,

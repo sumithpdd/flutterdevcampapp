@@ -26,36 +26,7 @@ class LatestHeadlinesAndArticles extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 8.0),
-                height: 30,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  physics: const ScrollPhysics(),
-                  itemCount: ArticleCategory.values.length,
-                  itemBuilder: (context, index) {
-                    final category = ArticleCategory.values[index];
-                    final isSelected = category == ref.watch(currentCategoryProvider);
-
-                    return Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: ChoiceChip(
-                        selectedColor: Theme.of(context).colorScheme.secondary,
-                        label: Text(
-                          category.name,
-                          style: Theme.of(context).primaryTextTheme.bodyText1,
-                        ),
-                        selected: isSelected,
-                        onSelected: (bool _) => ref
-                            .read(
-                              currentCategoryProvider.notifier,
-                            )
-                            .state = category,
-                      ),
-                    );
-                  },
-                ),
-              ),
+              const CategoryPicker(),
               const SizedBox(height: 10),
               Text(
                 AppStrings.headlinesTitle,
