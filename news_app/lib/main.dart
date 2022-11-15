@@ -17,7 +17,8 @@ void main() async {
     ProviderScope(
       child: DevicePreview(
         enabled: kEnableDevicePreview,
-        builder: (context) => const NewsApp(),),
+        builder: (context) => const NewsApp(),
+      ),
     ),
   );
 }
