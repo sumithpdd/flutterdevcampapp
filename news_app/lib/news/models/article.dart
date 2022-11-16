@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/news/models/models.dart';
-import 'package:uuid/uuid.dart';
 
 class Article extends Equatable with Comparable<Article> {
   final Source? source;
@@ -13,7 +12,6 @@ class Article extends Equatable with Comparable<Article> {
   final String? publishedAt;
   final String? content;
   final bool isSaved;
-  final String uuid;
 
   Article({
     required this.source,
@@ -25,8 +23,7 @@ class Article extends Equatable with Comparable<Article> {
     required this.publishedAt,
     required this.content,
     required this.isSaved,
-    String? uuid,
-  }) : uuid = uuid ?? const Uuid().v4();
+  });
 
   Article copy({required bool isSaved}) => Article(
     source: source,
@@ -38,7 +35,6 @@ class Article extends Equatable with Comparable<Article> {
     publishedAt: publishedAt,
     content: content,
     isSaved: isSaved,
-    uuid: uuid,
   );
 
   factory Article.fromJson(Map<String, dynamic> json) {
