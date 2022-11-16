@@ -19,7 +19,8 @@ class HeadlineSection extends StatelessWidget {
               itemCount: fetchedHeadlines.length,
               options: CarouselOptions(
                 aspectRatio: 2.0,
-                enlargeCenterPage: false,
+                enlargeCenterPage: true,
+                enlargeStrategy: CenterPageEnlargeStrategy.height,
                 autoPlay: true,
               ),
               itemBuilder: (ctx, index, realIdx) {
