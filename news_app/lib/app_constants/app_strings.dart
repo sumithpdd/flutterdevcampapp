@@ -20,12 +20,60 @@ class AppStrings {
       'headlines '
       'from different countries and in their respective languages';
   static const headlineSourceCountryCodes = [
-    'AE', 'AR', 'AT', 'AU', 'BE', 'BG', 'BR', 'CA', 'CH',
-    'CN', 'CO', 'CU', 'CZ', 'DE', 'EG', 'FR', 'GB', 'GR',
-    'HK', 'HU', 'ID', 'IE', 'IL', 'IN', 'IT', 'JP', 'KR',
-    'LT', 'LV', 'MA', 'MX', 'MY', 'NG', 'NL', 'NO', 'NZ',
-    'PH', 'PL', 'PT', 'RO', 'RS', 'RU', 'SA', 'SE', 'SG',
-    'SI', 'SK', 'TH', 'TR', 'TW', 'UA', 'US', 'VE', 'ZA',
+    'AE',
+    'AR',
+    'AT',
+    'AU',
+    'BE',
+    'BG',
+    'BR',
+    'CA',
+    'CH',
+    'CN',
+    'CO',
+    'CU',
+    'CZ',
+    'DE',
+    'EG',
+    'FR',
+    'GB',
+    'GR',
+    'HK',
+    'HU',
+    'ID',
+    'IE',
+    'IL',
+    'IN',
+    'IT',
+    'JP',
+    'KR',
+    'LT',
+    'LV',
+    'MA',
+    'MX',
+    'MY',
+    'NG',
+    'NL',
+    'NO',
+    'NZ',
+    'PH',
+    'PL',
+    'PT',
+    'RO',
+    'RS',
+    'RU',
+    'SA',
+    'SE',
+    'SG',
+    'SI',
+    'SK',
+    'TH',
+    'TR',
+    'TW',
+    'UA',
+    'US',
+    'VE',
+    'ZA',
   ];
   static const loading = 'Loading...';
 
@@ -38,9 +86,13 @@ class AppStrings {
   static const httpExceptionTryAgainTitle = 'Service appears to be down. Please try again later.';
   static const missingTitle = 'Missing Title';
   static const missingAuthor = 'Unknown';
-  static const missingImageUrl = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640';
+  static const missingImageUrl =
+      'https://www.pngfind.com/pngs/m/200-2004811_pepe-meme-pepe-the-frog-thinking-emoji-lol.png';
   static const missingUrl = 'Unknown';
   static const missingDate = 'Unknown Date';
+  static const missingDescription = 'No Description Provided';
+  static const missingContent = 'No Article Content Provided';
+  static const missingSource = <String, dynamic>{'id': 'Unknown', 'name': 'Unknown'};
 
   const AppStrings._();
 }
