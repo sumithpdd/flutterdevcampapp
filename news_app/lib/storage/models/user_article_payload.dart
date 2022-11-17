@@ -8,14 +8,14 @@ import 'package:news_app/storage/storage.dart';
 class UserArticlePayload extends MapView<String, dynamic> {
   UserArticlePayload({
     required String userId,
-    required Map<String, dynamic>? source,
-    required String? author,
-    required String? title,
-    required String? description,
-    required String? url,
-    required String? urlToImage,
-    required String? publishedAt,
-    required String? content,
+    required Map<String, dynamic> source,
+    required String author,
+    required String title,
+    required String description,
+    required String url,
+    required String urlToImage,
+    required String publishedAt,
+    required String content,
   }) : super({
           FirebaseFieldName.userId: userId,
           FirebaseFieldName.createdAt: FieldValue.serverTimestamp(),

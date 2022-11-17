@@ -7,14 +7,14 @@ class SavedArticle {
   final String articleId;
   final String userId;
   final String createdAt;
-  final Source? source;
-  final String? author;
-  final String? title;
-  final String? description;
-  final String? url;
-  final String? urlToImage;
-  final String? publishedAt;
-  final String? content;
+  final Source source;
+  final String author;
+  final String title;
+  final String description;
+  final String url;
+  final String urlToImage;
+  final String publishedAt;
+  final String content;
 
   SavedArticle({
     required this.articleId,

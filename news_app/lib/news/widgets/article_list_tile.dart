@@ -87,7 +87,7 @@ class ArticleListTileListView extends StatelessWidget {
             trailing: IconButton(
               icon: savedIcon,
               onPressed: () {
-
+                // TODO (Joshua): Implement notifier method call
               },
             ),
             onTap: () async {
