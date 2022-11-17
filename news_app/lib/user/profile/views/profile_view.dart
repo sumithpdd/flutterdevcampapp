@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/authentication/authentication.dart';
 import 'package:news_app/helpers/helpers.dart';
-import 'package:news_app/profile/constants/constants.dart';
+import 'package:news_app/user/profile/constants/constants.dart';
 
 class ProfileView extends ConsumerWidget {
   const ProfileView({

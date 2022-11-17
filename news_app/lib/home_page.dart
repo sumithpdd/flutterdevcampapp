@@ -5,7 +5,7 @@ import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/authentication/authentication.dart';
 import 'package:news_app/loading/loading.dart';
 import 'package:news_app/news/news.dart';
-import 'package:news_app/profile/profile.dart';
+import 'package:news_app/user/user.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({Key? key}) : super(key: key);
