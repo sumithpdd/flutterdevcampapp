@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_app/animations/animations.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/authentication/authentication.dart';
 import 'package:news_app/loading/loading.dart';
 import 'package:news_app/news/news.dart';
-import 'package:news_app/pages/pages.dart';
 import 'package:news_app/profile/profile.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -172,9 +172,7 @@ class MySearchDelegate extends SearchDelegate {
     close(context, null); // close search page to pop it off the stack
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => SearchResults(query: query),
-      ),
+      createFadeInTransitionForSearchResultsRoute(query),
     );
     super.showResults(context);
   }

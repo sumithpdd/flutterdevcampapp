@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/firebase_options.dart';
-import 'package:news_app/pages/pages.dart';
+import 'package:news_app/home_page.dart';
 
 const kEnableDevicePreview = false;
 
