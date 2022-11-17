@@ -13,7 +13,7 @@ As part of the Dev Camp organized by Google Developer Group in London, I had the
 * Week 9: :man_student: Graduation and QnA 
 
 ## App Previews from Apps Created
-### :shipit: Travel App
+### :shipit: Travel App Sample UI
 #### App Preview:
 
 
@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/40675392/201946877-440416ba-2036-4680-
 
 
 
-### :shipit: Recipe App
+### :shipit: Recipe App Sample UI
 #### App Preview:
 
 
