@@ -30,7 +30,7 @@ https://user-images.githubusercontent.com/40675392/201946794-ade44d07-72d2-42a9-
 
 
 ### :shipit: News App
-Flutter app that at first started as working with APIs in Flutter assignment. After learning from gurus like [Sumith](https://twitter.com/sumithpdd?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), [Majid](https://twitter.com/mhadaily?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q) and [Roa](https://twitter.com/roaakdm?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), the "animation queen" herself, I decided to take it to the next level and am currently extending it to incorporate Firebase (50% pending storing of user articles and sources), Riverpod, some animations and tests (0%). It's named RiverBase news simply because it uses Riverpod and Firebase .. ba-dum-tss
+Flutter app that at first started as working with APIs in Flutter assignment. After learning from gurus like [Sumith](https://twitter.com/sumithpdd?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), [Majid](https://twitter.com/mhadaily?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q) and [Roa](https://twitter.com/roaakdm?s=20&t=r5lM8dd8DlT6MdVNRd7J9Q), the "animation queen" herself, I decided to take it to the next level and am currently extending it to incorporate Firebase (50% pending storing of user articles and sources), Riverpod, some animations and tests (0%). It's named RiverBase News taking from Riverpod and Firebase ... ba-dum-tss 🥁
 
 #### App Preview:
 Still in progress 😅
