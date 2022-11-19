@@ -8,7 +8,7 @@ import 'package:news_app/home_page.dart';
 
 const kEnableDevicePreview = false;
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

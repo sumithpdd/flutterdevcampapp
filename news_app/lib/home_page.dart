@@ -7,14 +7,14 @@ import 'package:news_app/loading/loading.dart';
 import 'package:news_app/news/news.dart';
 import 'package:news_app/user/user.dart';
 
-class HomePage extends ConsumerStatefulWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _HomePageState extends State<HomePage> {
   int currentNavBarIndex = 0;
   final guestPages = [
     const LatestHeadlinesAndArticles(),
