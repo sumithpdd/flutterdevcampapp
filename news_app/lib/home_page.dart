@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         centerTitle: true,
-        title: const Text(AppStrings.appName),
+        title: const Text(OldAppStrings.appName),
         titleTextStyle: Theme.of(context).primaryTextTheme.headline2,
         actions: [
           IconButton(
@@ -97,19 +97,19 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(
               Icons.newspaper_rounded,
             ),
-            label: AppStrings.bottomNavBarLabels[0],
+            label: AppStrings.of(context).bottomNavBarLabels[0],
           ),
           BottomNavigationBarItem(
             icon: const Icon(
               Icons.travel_explore_rounded,
             ),
-            label: AppStrings.bottomNavBarLabels[1],
+            label: AppStrings.of(context).bottomNavBarLabels[1],
           ),
           BottomNavigationBarItem(
             icon: const Icon(
               Icons.person_rounded,
             ),
-            label: AppStrings.bottomNavBarLabels[2],
+            label: AppStrings.of(context).bottomNavBarLabels[2],
           ),
         ],
       ),
@@ -146,7 +146,7 @@ class MySearchDelegate extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     // TODO (Joshua): Cache previous search queries and show them as suggestions
-    List<String> suggestions = AppStrings.sampleSuggestions;
+    List<String> suggestions = OldAppStrings.sampleSuggestions;
 
     return ListView.builder(
       itemCount: suggestions.length,

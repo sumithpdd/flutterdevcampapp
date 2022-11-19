@@ -27,7 +27,7 @@ class LoginView extends ConsumerWidget {
             Container(
               alignment: Alignment.center,
               child: Text(
-                AppStrings.profilePageCallToAction,
+                OldAppStrings.profilePageCallToAction,
                 style: Theme.of(context).primaryTextTheme.headline3,
                 textAlign: TextAlign.center,
               ),
@@ -51,7 +51,7 @@ class LoginView extends ConsumerWidget {
                   result.log();
                 },
                 label: Text(
-                  AppStrings.signInWithGoogleText,
+                  OldAppStrings.signInWithGoogleText,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.onPrimaryContainer,
                     fontSize: 20,

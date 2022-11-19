@@ -47,7 +47,7 @@ class _CountrySpecificHeadlinesPageState extends ConsumerState<CountrySpecificHe
                   onPressed: () {
                     showCountryPicker(
                       context: context,
-                      countryFilter: AppStrings.headlineSourceCountryCodes,
+                      countryFilter: OldAppStrings.headlineSourceCountryCodes,
                       showPhoneCode: false,
                       onSelect: (Country c) {
                         setState(() {
@@ -58,7 +58,7 @@ class _CountrySpecificHeadlinesPageState extends ConsumerState<CountrySpecificHe
                     );
                   },
                   child: Text(
-                    AppStrings.chooseASourceText,
+                    OldAppStrings.chooseASourceText,
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.onPrimaryContainer,
                       fontSize: 20,
@@ -72,7 +72,7 @@ class _CountrySpecificHeadlinesPageState extends ConsumerState<CountrySpecificHe
               ),
               Center(
                 child: Text(
-                  AppStrings.defaultSourcePageInfoMessage,
+                  OldAppStrings.defaultSourcePageInfoMessage,
                   style: Theme.of(context).primaryTextTheme.bodyText1,
                   textAlign: TextAlign.center,
                 ),
@@ -100,15 +100,15 @@ class _CountrySpecificHeadlinesPageState extends ConsumerState<CountrySpecificHe
                         return snapshot.data!.isEmpty
                             ? Center(
                                 child: Text(
-                                  AppStrings.headlinesListIsEmptyText,
+                                  OldAppStrings.headlinesListIsEmptyText,
                                   style: Theme.of(context).primaryTextTheme.headline2,
                                 ),
                               )
                             : ArticleListTileListView(articles: snapshot.data!);
                       } else if (snapshot.hasError) {
                         final errorMessage = snapshot.error is HttpException
-                            ? AppStrings.httpExceptionTryAgainTitle
-                            : AppStrings.headlinesListIsEmptyText;
+                            ? OldAppStrings.httpExceptionTryAgainTitle
+                            : OldAppStrings.headlinesListIsEmptyText;
 
                         return Padding(
                           padding: const EdgeInsets.all(25.0),
@@ -132,7 +132,7 @@ class _CountrySpecificHeadlinesPageState extends ConsumerState<CountrySpecificHe
                       } else {
                         return Center(
                           child: Text(
-                            AppStrings.headlinesListIsEmptyText,
+                            OldAppStrings.headlinesListIsEmptyText,
                             style: Theme.of(context).primaryTextTheme.headline1,
                           ),
                         );

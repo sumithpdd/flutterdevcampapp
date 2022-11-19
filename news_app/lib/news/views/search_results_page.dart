@@ -42,7 +42,7 @@ class _SearchResultsState extends ConsumerState<SearchResults> {
           color: Theme.of(context).iconTheme.color,
         ),
         centerTitle: true,
-        title: const Text(AppStrings.searchResultsTitle),
+        title: const Text(OldAppStrings.searchResultsTitle),
         titleTextStyle: Theme.of(context).primaryTextTheme.headline2,
       ),
       body: SingleChildScrollView(
@@ -69,7 +69,7 @@ class _SearchResultsState extends ConsumerState<SearchResults> {
                       return snapshot.data!.isEmpty
                           ? Center(
                               child: Text(
-                                AppStrings.articlesListIsEmptyText,
+                                OldAppStrings.articlesListIsEmptyText,
                                 style: Theme.of(context).primaryTextTheme.headline2,
                               ),
                             )
@@ -77,7 +77,7 @@ class _SearchResultsState extends ConsumerState<SearchResults> {
                     } else if (snapshot.hasError) {
                       final errorMessage = snapshot.error is HttpException
                           ? snapshot.error.toString()
-                          : AppStrings.articlesListIsEmptyText;
+                          : OldAppStrings.articlesListIsEmptyText;
                       return Center(
                         child: Text(
                           '❌ $errorMessage ❌',
@@ -87,7 +87,7 @@ class _SearchResultsState extends ConsumerState<SearchResults> {
                     } else {
                       return Center(
                         child: Text(
-                          AppStrings.articlesListIsEmptyText,
+                          OldAppStrings.articlesListIsEmptyText,
                           style: Theme.of(context).primaryTextTheme.headline1,
                         ),
                       );

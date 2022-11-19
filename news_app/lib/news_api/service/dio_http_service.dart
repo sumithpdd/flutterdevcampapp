@@ -48,7 +48,7 @@ class DioHttpService implements HttpService {
       }
     } catch (e) {
       throw HttpException(
-        title: AppStrings.httpExceptionTryAgainTitle,
+        title: OldAppStrings.httpExceptionTryAgainTitle,
         statusCode: e is DioError ? e.response?.statusCode : 500,
         message: e is DioError ? e.response?.statusMessage : e.toString(),
       );

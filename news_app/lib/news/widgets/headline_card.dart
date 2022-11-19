@@ -19,7 +19,7 @@ class HeadlineCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: () async {
-          final articleUrl = article.url == null ? AppStrings.missingUrl : article.url!;
+          final articleUrl = article.url == null ? OldAppStrings.missingUrl : article.url!;
           final url = Uri.parse(articleUrl);
           if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
             throw 'Could not launch $url';
@@ -37,7 +37,7 @@ class HeadlineCard extends StatelessWidget {
                   height: 125,
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.cover,
-                  imageUrl: article.urlToImage == null ? AppStrings.missingImageUrl : article.urlToImage!,
+                  imageUrl: article.urlToImage == null ? OldAppStrings.missingImageUrl : article.urlToImage!,
                   placeholder: (context, url) => const SizedBox(
                     height: 60,
                     width: 60,
@@ -48,7 +48,7 @@ class HeadlineCard extends StatelessWidget {
               ),
             ),
             Text(
-              article.title == null ? AppStrings.missingTitle : article.title!,
+              article.title == null ? OldAppStrings.missingTitle : article.title!,
               style: Theme.of(context).primaryTextTheme.bodyText1,
               overflow: TextOverflow.ellipsis,
             ),
@@ -57,12 +57,12 @@ class HeadlineCard extends StatelessWidget {
                 style: Theme.of(context).primaryTextTheme.subtitle1,
                 children: [
                   TextSpan(
-                    text: article.author == null ? AppStrings.missingAuthor : article.author!,
+                    text: article.author == null ? OldAppStrings.missingAuthor : article.author!,
                   ),
                   const WidgetSpan(child: SizedBox(width: 10)),
                   TextSpan(
                     text: article.publishedAt == null
-                        ? AppStrings.missingDate
+                        ? OldAppStrings.missingDate
                         : DateFormat.yMEd().add_jm().format(DateTime.parse(article.publishedAt!)),
                   ),
                 ],

@@ -15,14 +15,14 @@ class UserArticleStorage {
     try {
       final articlePayload = UserArticlePayload(
         userId: userId,
-        source: article.source?.toJson() ?? AppStrings.missingSource,
-        author: article.author ?? AppStrings.missingAuthor,
-        title: article.title ?? AppStrings.missingTitle,
-        description: article.description ?? AppStrings.missingDescription,
-        url: article.url ?? AppStrings.missingUrl,
-        urlToImage: article.urlToImage ?? AppStrings.missingImageUrl,
-        publishedAt: article.publishedAt ?? AppStrings.missingDate,
-        content: article.content ?? AppStrings.missingContent,
+        source: article.source?.toJson() ?? OldAppStrings.missingSource,
+        author: article.author ?? OldAppStrings.missingAuthor,
+        title: article.title ?? OldAppStrings.missingTitle,
+        description: article.description ?? OldAppStrings.missingDescription,
+        url: article.url ?? OldAppStrings.missingUrl,
+        urlToImage: article.urlToImage ?? OldAppStrings.missingImageUrl,
+        publishedAt: article.publishedAt ?? OldAppStrings.missingDate,
+        content: article.content ?? OldAppStrings.missingContent,
       );
       await FirebaseFirestore.instance
           .collection(

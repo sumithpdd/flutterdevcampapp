@@ -45,7 +45,7 @@ class Article extends Equatable with Comparable<Article> {
       description: json['description'],
       url: json['url'],
       urlToImage: json['urlToImage'],
-      publishedAt: json['publishedAt'] ?? AppStrings.missingDate,
+      publishedAt: json['publishedAt'] ?? OldAppStrings.missingDate,
       content: json['content'],
       isSaved: json['isSaved'] ?? false,
     );

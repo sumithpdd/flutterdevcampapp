@@ -15,7 +15,7 @@ class LoadingScreen {
 
   void show({
     required BuildContext context,
-    String text = AppStrings.loading,
+    String text = OldAppStrings.loading,
   }) {
     if (_controller?.update(text) ?? false) {
       return;

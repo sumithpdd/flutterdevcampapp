@@ -16,7 +16,7 @@ class ErrorCard extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Image.network(
-              AppStrings.articlesNotFoundImagePng,
+              OldAppStrings.articlesNotFoundImagePng,
               scale: 0.8,
               fit: BoxFit.contain,
               semanticLabel: 'Feels Bad Man',

@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/app_constants/app_constants.dart';
 import 'package:news_app/firebase_options.dart';
@@ -39,10 +40,20 @@ class NewsApp extends StatelessWidget {
       child: MaterialApp(
         useInheritedMediaQuery: kEnableDevicePreview,
         builder: DevicePreview.appBuilder,
-        title: AppStrings.appName,
+        title: OldAppStrings.appName,
         debugShowCheckedModeBanner: false,
         theme: AppThemes.lightTheme,
         home: const HomePage(),
+        supportedLocales: const [
+          Locale('en', 'GB'),
+          Locale('es', 'ES'),
+        ],
+        localizationsDelegates: const [
+          AppStringsDelegate.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
       ),
     );
   }

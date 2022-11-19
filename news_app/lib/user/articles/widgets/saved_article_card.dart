@@ -42,7 +42,7 @@ class SavedArticleCard extends ConsumerWidget {
                   ),
                   const WidgetSpan(child: SizedBox(width: 10)),
                   TextSpan(
-                    text: article.publishedAt == AppStrings.missingDate
+                    text: article.publishedAt == OldAppStrings.missingDate
                         ? article.publishedAt
                         : DateFormat.yMEd().add_jm().format(DateTime.parse(article.publishedAt)),
                   ),

@@ -41,7 +41,7 @@ class ArticleListTileListView extends StatelessWidget {
                 height: 120,
                 width: 60,
                 fit: BoxFit.cover,
-                imageUrl: articles[index].urlToImage == null ? AppStrings.missingImageUrl : articles[index].urlToImage!,
+                imageUrl: articles[index].urlToImage == null ? OldAppStrings.missingImageUrl : articles[index].urlToImage!,
                 placeholder: (context, url) =>
                     SizedBox(
                       height: 60,
@@ -59,7 +59,7 @@ class ArticleListTileListView extends StatelessWidget {
               ),
             ),
             title: Text(
-              articles[index].title == null ? AppStrings.missingTitle : articles[index].title!,
+              articles[index].title == null ? OldAppStrings.missingTitle : articles[index].title!,
               style: Theme
                   .of(context)
                   .primaryTextTheme
@@ -73,12 +73,12 @@ class ArticleListTileListView extends StatelessWidget {
                     .subtitle2,
                 children: [
                   TextSpan(
-                    text: articles[index].author == null ? AppStrings.missingAuthor : articles[index].author!,
+                    text: articles[index].author == null ? OldAppStrings.missingAuthor : articles[index].author!,
                   ),
                   const WidgetSpan(child: SizedBox(width: 10)),
                   TextSpan(
                     text: articles[index].publishedAt == null
-                        ? AppStrings.missingDate
+                        ? OldAppStrings.missingDate
                         : DateFormat.yMEd().add_jm().format(DateTime.parse(articles[index].publishedAt!)),
                   ),
                 ],
@@ -91,7 +91,7 @@ class ArticleListTileListView extends StatelessWidget {
               },
             ),
             onTap: () async {
-              final articleUrl = articles[index].url == null ? AppStrings.missingUrl : articles[index].url!;
+              final articleUrl = articles[index].url == null ? OldAppStrings.missingUrl : articles[index].url!;
               final url = Uri.parse(articleUrl);
               if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
                 throw 'Could not launch $url';

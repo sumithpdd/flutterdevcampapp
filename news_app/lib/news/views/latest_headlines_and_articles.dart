@@ -29,14 +29,14 @@ class LatestHeadlinesAndArticles extends ConsumerWidget {
               const CategoryPicker(),
               const SizedBox(height: 10),
               Text(
-                AppStrings.headlinesTitle,
+                OldAppStrings.headlinesTitle,
                 style: Theme.of(context).primaryTextTheme.headline3,
               ),
               const SizedBox(height: 10),
               latestHeadlines.when(
                 data: (data) => data.isEmpty
                     ? Text(
-                        AppStrings.headlinesListIsEmptyText,
+                        OldAppStrings.headlinesListIsEmptyText,
                         style: Theme.of(context).primaryTextTheme.headline1,
                       )
                     : HeadlineSection(fetchedHeadlines: data),
@@ -45,8 +45,8 @@ class LatestHeadlinesAndArticles extends ConsumerWidget {
                   child: Center(
                     child: Text(
                       error is HttpException
-                          ? AppStrings.httpExceptionTryAgainTitle
-                          : AppStrings.headlinesListIsEmptyText,
+                          ? OldAppStrings.httpExceptionTryAgainTitle
+                          : OldAppStrings.headlinesListIsEmptyText,
                       style: Theme.of(context).primaryTextTheme.headline3,
                       textAlign: TextAlign.center,
                     ),
@@ -64,7 +64,7 @@ class LatestHeadlinesAndArticles extends ConsumerWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                AppStrings.articlesTitle,
+                OldAppStrings.articlesTitle,
                 style: Theme.of(context).primaryTextTheme.headline3,
               ),
               const SizedBox(height: 10),
