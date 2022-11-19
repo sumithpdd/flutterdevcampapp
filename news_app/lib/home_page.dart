@@ -170,10 +170,7 @@ class MySearchDelegate extends SearchDelegate {
   @override
   void showResults(BuildContext context) {
     close(context, null); // close search page to pop it off the stack
-    Navigator.push(
-      context,
-      createFadeInTransitionForSearchResultsRoute(query),
-    );
+    Navigator.of(context).push(createFadeInTransitionForSearchResultsRoute(query),);
     super.showResults(context);
   }
 }
